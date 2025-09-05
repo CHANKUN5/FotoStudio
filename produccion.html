@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoStudio - Producción</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/produccion.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    
+    <button type="button" class="sidebar-toggle">
+        Toggle sidebar
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <span class="sidebar-logo-text">FotoStudio</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar">
+                <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+            </div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name" data-user-name>Usuario</div>
+                <div class="sidebar-user-role">Administrador</div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Principal</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
+                            <div class="sidebar-menu-icon">📊</div>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Gestión</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">📋</div>
+                            Pedidos
+                            <span class="sidebar-badge">12</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">👥</div>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
+                            <div class="sidebar-menu-icon">📦</div>
+                            Inventario
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="produccion.html" class="sidebar-menu-link active">
+                            <div class="sidebar-menu-icon">🏭</div>
+                            Producción
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Comercial</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">📄</div>
+                            Contratos
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
+                            <div class="sidebar-menu-icon">✅</div>
+                            Productos Terminados
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">📅</div>
+                            Agenda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Análisis</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
+                            <div class="sidebar-menu-icon">📈</div>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                            <div class="sidebar-menu-icon">⚙️</div>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" data-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Centro de Producción</h1>
+                <p class="dashboard-subtitle">Gestiona el flujo de trabajo y producción</p>
+            </div>
+            
+            <div class="dashboard-actions">
+                <div class="dashboard-search">
+                    <svg class="dashboard-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" placeholder="Buscar trabajos...">
+                </div>
+                
+                <div class="dashboard-user">
+                    <div class="avatar avatar-md">
+                        <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+                    </div>
+                    <span data-user-name>Usuario</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <div class="production-stats">
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-content">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Trabajos Activos</div>
+                        <div class="stat-trend up">+3 esta semana</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <div class="stat-value">2.5</div>
+                        <div class="stat-label">Días Promedio</div>
+                        <div class="stat-trend down">-0.5 días</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <div class="stat-value">89%</div>
+                        <div class="stat-label">Eficiencia</div>
+                        <div class="stat-trend up">+5% este mes</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <div class="stat-value">15</div>
+                        <div class="stat-label">Completados Hoy</div>
+                        <div class="stat-trend up">+2 vs ayer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="production-grid">
+                <div class="workflow-board">
+                    <div class="workflow-header">
+                        <h3>Flujo de Trabajo</h3>
+                        <div class="workflow-filters">
+                            <select class="filter-select">
+                                <option value="">Todos los trabajos</option>
+                                <option value="fotografia">Fotografía</option>
+                                <option value="enmarcado">Enmarcado</option>
+                                <option value="impresion">Impresión</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-columns">
+                        <div class="workflow-column">
+                            <div class="column-header">
+                                <h4>📋 Pendientes</h4>
+                                <span class="column-count">8</span>
+                            </div>
+                            <div class="workflow-items">
+                                <div class="workflow-item">
+                                    <div class="item-header">
+                                        <span class="item-id">#PROD-001</span>
+                                        <span class="item-priority high">Alta</span>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Sesión Fotográfica Familiar</h5>
+                                        <p>Cliente: María García</p>
+                                        <div class="item-meta">
+                                            <span class="item-date">📅 20 Dic 2024</span>
+                                            <span class="item-time">⏱️ 2 horas</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-sm btn-primary">Iniciar</button>
+                                        <button class="btn btn-sm btn-secondary">Ver</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="workflow-item">
+                                    <div class="item-header">
+                                        <span class="item-id">#PROD-002</span>
+                                        <span class="item-priority medium">Media</span>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Enmarcado 30x40</h5>
+                                        <p>Cliente: Juan Pérez</p>
+                                        <div class="item-meta">
+                                            <span class="item-date">📅 22 Dic 2024</span>
+                                            <span class="item-time">⏱️ 1 hora</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-sm btn-primary">Iniciar</button>
+                                        <button class="btn btn-sm btn-secondary">Ver</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-column">
+                            <div class="column-header">
+                                <h4>🔄 En Proceso</h4>
+                                <span class="column-count">5</span>
+                            </div>
+                            <div class="workflow-items">
+                                <div class="workflow-item">
+                                    <div class="item-header">
+                                        <span class="item-id">#PROD-003</span>
+                                        <span class="item-priority high">Alta</span>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Edición de Fotos</h5>
+                                        <p>Cliente: Ana López</p>
+                                        <div class="item-meta">
+                                            <span class="item-date">📅 18 Dic 2024</span>
+                                            <span class="item-time">⏱️ 3 horas</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 65%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-sm btn-success">Completar</button>
+                                        <button class="btn btn-sm btn-secondary">Ver</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-column">
+                            <div class="column-header">
+                                <h4>✅ Completados</h4>
+                                <span class="column-count">11</span>
+                            </div>
+                            <div class="workflow-items">
+                                <div class="workflow-item completed">
+                                    <div class="item-header">
+                                        <span class="item-id">#PROD-004</span>
+                                        <span class="item-status completed">✅</span>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Impresión de Fotos</h5>
+                                        <p>Cliente: Carlos Ruiz</p>
+                                        <div class="item-meta">
+                                            <span class="item-date">📅 15 Dic 2024</span>
+                                            <span class="item-time">⏱️ 30 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-sm btn-secondary">Ver</button>
+                                        <button class="btn btn-sm btn-outline">Entregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="production-sidebar">
+                    <div class="quick-actions">
+                        <h3>Acciones Rápidas</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn primary">
+                                <span class="action-icon">📷</span>
+                                <span>Nueva Sesión</span>
+                            </button>
+                            <button class="action-btn secondary">
+                                <span class="action-icon">🖼️</span>
+                                <span>Enmarcar</span>
+                            </button>
+                            <button class="action-btn secondary">
+                                <span class="action-icon">🖨️</span>
+                                <span>Imprimir</span>
+                            </button>
+                            <button class="action-btn secondary">
+                                <span class="action-icon">✏️</span>
+                                <span>Editar</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <h3>Actividad Reciente</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">✅</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Trabajo completado</div>
+                                    <div class="activity-description">#PROD-004 - Impresión de Fotos</div>
+                                </div>
+                                <div class="activity-time">Hace 2 horas</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🔄</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Trabajo iniciado</div>
+                                    <div class="activity-description">#PROD-003 - Edición de Fotos</div>
+                                </div>
+                                <div class="activity-time">Hace 4 horas</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">📋</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Nuevo trabajo</div>
+                                    <div class="activity-description">#PROD-001 - Sesión Fotográfica</div>
+                                </div>
+                                <div class="activity-time">Hace 6 horas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/global.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/produccion.js"></script>
+</body>
+</html>

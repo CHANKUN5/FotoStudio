@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoStudio - Inventario</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/inventario.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    
+    <button type="button" class="sidebar-toggle" title="Toggle sidebar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo" data-nav="dashboard.html">
+                <span class="sidebar-logo-text">FotoStudio</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar">
+                <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+            </div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name" data-user-name>Usuario</div>
+                <div class="sidebar-user-role">Administrador</div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Principal</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
+                            <div class="sidebar-menu-icon">📊</div>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Gestión</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">📋</div>
+                            Pedidos
+                            <span class="sidebar-badge">12</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">👥</div>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="inventario.html" class="sidebar-menu-link active">
+                            <div class="sidebar-menu-icon">📦</div>
+                            Inventario
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
+                            <div class="sidebar-menu-icon">🏭</div>
+                            Producción
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Comercial</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">📄</div>
+                            Contratos
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
+                            <div class="sidebar-menu-icon">✅</div>
+                            Productos Terminados
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">📅</div>
+                            Agenda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Análisis</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
+                            <div class="sidebar-menu-icon">📈</div>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                            <div class="sidebar-menu-icon">⚙️</div>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" data-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <div class="dashboard-content">
+            <div class="inventario-header">
+                <div>
+                    <h1 class="dashboard-title">Control de Inventario</h1>
+                    <p class="dashboard-subtitle">Gestiona tu stock de materiales y productos</p>
+                </div>
+                
+                <div class="inventario-actions">
+                    <div class="filter-group">
+                        <label>Categoría:</label>
+                        <select class="filter-select" id="categoryFilter" title="Categoría">
+                            <option value="">Todas</option>
+                            <option value="papel">Papel</option>
+                            <option value="marcos">Marcos</option>
+                            <option value="tintas">Tintas</option>
+                            <option value="equipos">Equipos</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-secondary" onclick="exportInventario()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Exportar
+                    </button>
+                    
+                    <button class="btn btn-primary" onclick="openAddItemModal()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Agregar Item
+                    </button>
+                </div>
+            </div>
+            
+            <div class="inventario-stats">
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-content">
+                        <div class="stat-value">156</div>
+                        <div class="stat-label">Items Totales</div>
+                        <div class="stat-trend up">↗ +8 items nuevos</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon warning">⚠️</div>
+                    <div class="stat-content">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Stock Bajo</div>
+                        <div class="stat-trend warning">⚠️ Requiere atención</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon success">✅</div>
+                    <div class="stat-content">
+                        <div class="stat-value">89</div>
+                        <div class="stat-label">Stock Óptimo</div>
+                        <div class="stat-trend up">↗ 72% del total</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <div class="stat-value">S/ 25,430</div>
+                        <div class="stat-label">Valor Total</div>
+                        <div class="stat-trend up">↗ +12% este mes</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="inventario-grid">
+                <div class="inventario-filters-card">
+                    <h3>Filtros</h3>
+                    <div class="filter-section">
+                        <label>Estado del Stock:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="stockAlto" checked>
+                                <span class="checkmark"></span>
+                                Stock Alto
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="stockMedio" checked>
+                                <span class="checkmark"></span>
+                                Stock Medio
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="stockBajo" checked>
+                                <span class="checkmark"></span>
+                                Stock Bajo
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                       <label>Precio:</label>
+                      <div class="price-range">
+                           <label for="priceMin">Mínimo:</label>
+                           <input type="range" id="priceMin" min="0" max="1000" value="0" class="range-slider">
+                           <label for="priceMax">Máximo:</label>
+                           <input type="range" id="priceMax" min="0" max="1000" value="1000" class="range-slider">
+                     <div class="price-labels">
+                        <span>S/ 0</span>
+                        <span>S/ 1000</span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <button class="btn btn-secondary btn-sm" onclick="clearFilters()">
+                        Limpiar Filtros
+                    </button>
+                </div>
+                
+                <div class="inventario-table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">Inventario de Productos</h3>
+                        <div class="dashboard-search">
+                            <svg class="dashboard-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                            </svg>
+                            <input type="text" placeholder="Buscar productos..." id="searchInput">
+                        </div>
+                    </div>
+                    
+                    <table class="inventario-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Stock</th>
+                                <th>Precio Unit.</th>
+                                <th>Valor Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventarioTableBody">
+                            <tr>
+                                <td><span class="product-code">PAP-001</span></td>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-image">📄</div>
+                                        <div>
+                                            <div class="product-name">Papel Fotográfico A4</div>
+                                            <div class="product-description">Papel brillante 300gsm</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag cat-papel">Papel</span></td>
+                                <td>
+                                    <div class="stock-info">
+                                        <span class="stock-value">450</span>
+                                        <span class="stock-unit">hojas</span>
+                                    </div>
+                                </td>
+                                <td><span class="price">S/ 0.85</span></td>
+                                <td><span class="total-value">S/ 382.50</span></td>
+                                <td><span class="stock-badge stock-alto">Alto</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn edit" title="Editar">✏️</button>
+                                        <button class="action-btn stock" title="Ajustar Stock">📊</button>
+                                        <button class="action-btn delete" title="Eliminar">🗑️</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="product-code">MAR-012</span></td>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-image">🖼️</div>
+                                        <div>
+                                            <div class="product-name">Marco Dorado 20x30</div>
+                                            <div class="product-description">Marco elegante dorado</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag cat-marcos">Marcos</span></td>
+                                <td>
+                                    <div class="stock-info">
+                                        <span class="stock-value">8</span>
+                                        <span class="stock-unit">unidades</span>
+                                    </div>
+                                </td>
+                                <td><span class="price">S/ 25.00</span></td>
+                                <td><span class="total-value">S/ 200.00</span></td>
+                                <td><span class="stock-badge stock-bajo">Bajo</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn edit" title="Editar">✏️</button>
+                                        <button class="action-btn stock" title="Ajustar Stock">📊</button>
+                                        <button class="action-btn delete" title="Eliminar">🗑️</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="product-code">TIN-007</span></td>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-image">🎨</div>
+                                        <div>
+                                            <div class="product-name">Cartucho Tinta Negra</div>
+                                            <div class="product-description">Canon PGI-580XXL</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag cat-tintas">Tintas</span></td>
+                                <td>
+                                    <div class="stock-info">
+                                        <span class="stock-value">15</span>
+                                        <span class="stock-unit">unidades</span>
+                                    </div>
+                                </td>
+                                <td><span class="price">S/ 45.00</span></td>
+                                <td><span class="total-value">S/ 675.00</span></td>
+                                <td><span class="stock-badge stock-medio">Medio</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn edit" title="Editar">✏️</button>
+                                        <button class="action-btn stock" title="Ajustar Stock">📊</button>
+                                        <button class="action-btn delete" title="Eliminar">🗑️</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="pagination">
+                        <span class="pagination-info">Mostrando 1-10 de 156 productos</span>
+                        <div class="pagination-buttons">
+                            <button class="pagination-btn" disabled>←</button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="modal-overlay" id="addItemModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Agregar Nuevo Item</h3>
+            </div>
+            <div class="modal-body">
+                <form id="addItemForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Código del Producto</label>
+                            <input type="text" class="form-control" placeholder="Ej: PAP-001" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Categoría</label>
+                            <select class="form-control" required title="Categoría del producto">
+                                <option value="">Seleccionar categoría</option>
+                                <option value="papel">Papel</option>
+                                <option value="marcos">Marcos</option>
+                                <option value="tintas">Tintas</option>
+                                <option value="equipos">Equipos</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nombre del Producto</label>
+                        <input type="text" class="form-control" placeholder="Ej: Papel Fotográfico A4" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Descripción</label>
+                        <textarea class="form-control" rows="2" placeholder="Descripción del producto..."></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Cantidad Inicial</label>
+                            <input type="number" class="form-control" placeholder="0" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Unidad de Medida</label>
+                            <select class="form-control" required title="Unidad de Medida">
+                                <option value="">Seleccionar unidad</option>
+                                <option value="unidades">Unidades</option>
+                                <option value="hojas">Hojas</option>
+                                <option value="metros">Metros</option>
+                                <option value="kilogramos">Kilogramos</option>
+                                <option value="litros">Litros</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Precio Unitario (S/)</label>
+                            <input type="number" class="form-control" placeholder="0.00" step="0.01" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Stock Mínimo</label>
+                            <input type="number" class="form-control" placeholder="10" min="0" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeAddItemModal()">Cancelar</button>
+                <button type="submit" class="btn btn-primary" form="addItemForm">Agregar Item</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-overlay" id="stockModal">
+        <div class="modal modal-sm">
+            <div class="modal-header">
+                <h3 class="modal-title">Ajustar Stock</h3>
+            </div>
+            <div class="modal-body">
+                <form id="stockForm">
+                    <div class="form-group">
+                        <label class="form-label">Producto</label>
+                        <select class="form-control" required title="Categoría del producto">
+                            <option value="">Seleccionar producto</option>
+                            <option value="papel">Papel Fotográfico A4</option>
+                            <option value="marco">Marco Dorado 20x30</option>
+                            <option value="tinta">Cartucho Tinta Negra</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Stock Actual</label>
+                        <input type="text" class="form-control" id="stockProductCurrent" readonly title="Ingrese el nombre del producto">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="adjustmentType">Tipo de Ajuste</label>
+                        <select class="form-control" id="adjustmentType" required>
+                            <option value="">Seleccionar tipo</option>
+                            <option value="add">Agregar Stock</option>
+                            <option value="remove">Quitar Stock</option>
+                            <option value="set">Establecer Stock</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" id="adjustmentQuantity" placeholder="0" min="0" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Motivo</label>
+                        <textarea class="form-control" rows="2" placeholder="Motivo del ajuste..." required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeStockModal()">Cancelar</button>
+                <button type="submit" class="btn btn-primary" form="stockForm">Ajustar Stock</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/global.js"></script>
+    <script src="js/glowing-effect.js"></script>
+    <script src="js/inventario.js"></script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoStudio - Configuración</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/configuracion.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    
+    <button type="button" class="sidebar-toggle">
+        Toggle sidebar
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <span class="sidebar-logo-text">FotoStudio</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar">
+                <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+            </div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name" data-user-name>Usuario</div>
+                <div class="sidebar-user-role">Administrador</div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Principal</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
+                            <div class="sidebar-menu-icon">📊</div>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Gestión</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">📋</div>
+                            Pedidos
+                            <span class="sidebar-badge">12</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">👥</div>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
+                            <div class="sidebar-menu-icon">📦</div>
+                            Inventario
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
+                            <div class="sidebar-menu-icon">🏭</div>
+                            Producción
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Comercial</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">📄</div>
+                            Contratos
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
+                            <div class="sidebar-menu-icon">✅</div>
+                            Productos Terminados
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">📅</div>
+                            Agenda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Análisis</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
+                            <div class="sidebar-menu-icon">📈</div>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="configuracion.html" class="sidebar-menu-link active">
+                            <div class="sidebar-menu-icon">⚙️</div>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" data-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Configuración del Sistema</h1>
+                <p class="dashboard-subtitle">Personaliza tu experiencia y configuración</p>
+            </div>
+            
+            <div class="dashboard-actions">
+                <div class="dashboard-user">
+                    <div class="avatar avatar-md">
+                        <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+                    </div>
+                    <span data-user-name>Usuario</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <div class="config-sections">
+                <div class="config-section glow-effect">
+                    <div class="section-header">
+                        <div class="section-icon">👤</div>
+                        <div class="section-info">
+                            <h3 class="section-title">Perfil de Usuario</h3>
+                            <p class="section-description">Gestiona tu información personal</p>
+                        </div>
+                    </div>
+                    <div class="section-content">
+                        <div class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" value="Usuario" placeholder="Tu nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" value="usuario@fotostudio.com" placeholder="tu@email.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" placeholder="+51 999 999 999">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Rol</label>
+                                    <select class="form-control">
+                                        <option value="admin">Administrador</option>
+                                        <option value="editor">Editor</option>
+                                        <option value="viewer">Visualizador</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Avatar</label>
+                                <div class="avatar-selector">
+                                    <div class="current-avatar">
+                                        <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%237033ff'/%3E%3Ctext x='30' y='35' text-anchor='middle' fill='white' font-size='20' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar actual">
+                                    </div>
+                                    <div class="avatar-options">
+                                        <button class="avatar-option" data-avatar="assets/avatar1.png">
+                                            <img src="assets/avatar1.png" alt="Avatar 1">
+                                        </button>
+                                        <button class="avatar-option" data-avatar="assets/avatar2.png">
+                                            <img src="assets/avatar2.png" alt="Avatar 2">
+                                        </button>
+                                        <button class="avatar-option" data-avatar="assets/avatar3.png">
+                                            <img src="assets/avatar3.png" alt="Avatar 3">
+                                        </button>
+                                        <button class="avatar-option" data-avatar="assets/avatar4.png">
+                                            <img src="assets/avatar4.png" alt="Avatar 4">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary">Guardar Cambios</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section glow-effect">
+                    <div class="section-header">
+                        <div class="section-icon">🏢</div>
+                        <div class="section-info">
+                            <h3 class="section-title">Información del Estudio</h3>
+                            <p class="section-description">Configura los datos de tu negocio</p>
+                        </div>
+                    </div>
+                    <div class="section-content">
+                        <div class="studio-form">
+                            <div class="form-group">
+                                <label class="form-label">Nombre del Estudio</label>
+                                <input type="text" class="form-control" value="FotoStudio" placeholder="Nombre de tu estudio">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" placeholder="Dirección completa">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" placeholder="+51 999 999 999">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="info@fotostudio.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Sitio Web</label>
+                                    <input type="url" class="form-control" placeholder="https://fotostudio.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Descripción</label>
+                                <textarea class="form-control" rows="3" placeholder="Descripción de tu estudio..."></textarea>
+                            </div>
+                            
+                            <button class="btn btn-primary">Actualizar Información</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section glow-effect">
+                    <div class="section-header">
+                        <div class="section-icon">⚙️</div>
+                        <div class="section-info">
+                            <h3 class="section-title">Configuración General</h3>
+                            <p class="section-description">Ajustes del sistema y preferencias</p>
+                        </div>
+                    </div>
+                    <div class="section-content">
+                        <div class="settings-form">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4 class="setting-title">Notificaciones por Email</h4>
+                                    <p class="setting-description">Recibir notificaciones sobre nuevos pedidos y citas</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4 class="setting-title">Recordatorios de Citas</h4>
+                                    <p class="setting-description">Enviar recordatorios automáticos a clientes</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4 class="setting-title">Modo Oscuro</h4>
+                                    <p class="setting-description">Activar tema oscuro para la interfaz</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4 class="setting-title">Idioma</h4>
+                                    <p class="setting-description">Selecciona el idioma de la interfaz</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select class="form-control">
+                                        <option value="es">Español</option>
+                                        <option value="en">English</option>
+                                        <option value="pt">Português</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4 class="setting-title">Zona Horaria</h4>
+                                    <p class="setting-description">Configura tu zona horaria local</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select class="form-control">
+                                        <option value="America/Lima">Lima (GMT-5)</option>
+                                        <option value="America/New_York">Nueva York (GMT-5)</option>
+                                        <option value="Europe/Madrid">Madrid (GMT+1)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary">Guardar Configuración</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section glow-effect">
+                    <div class="section-header">
+                        <div class="section-icon">🔒</div>
+                        <div class="section-info">
+                            <h3 class="section-title">Seguridad</h3>
+                            <p class="section-description">Gestiona la seguridad de tu cuenta</p>
+                        </div>
+                    </div>
+                    <div class="section-content">
+                        <div class="security-form">
+                            <div class="form-group">
+                                <label class="form-label">Contraseña Actual</label>
+                                <input type="password" class="form-control" placeholder="Tu contraseña actual">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Nueva Contraseña</label>
+                                    <input type="password" class="form-control" placeholder="Nueva contraseña">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Confirmar Contraseña</label>
+                                    <input type="password" class="form-control" placeholder="Confirmar nueva contraseña">
+                                </div>
+                            </div>
+                            
+                            <div class="security-options">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h4 class="setting-title">Autenticación de Dos Factores</h4>
+                                        <p class="setting-description">Agregar una capa extra de seguridad</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h4 class="setting-title">Sesiones Activas</h4>
+                                        <p class="setting-description">Ver y gestionar sesiones activas</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <button class="btn btn-secondary btn-sm">Ver Sesiones</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary">Cambiar Contraseña</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section glow-effect">
+                    <div class="section-header">
+                        <div class="section-icon">📊</div>
+                        <div class="section-info">
+                            <h3 class="section-title">Respaldo y Datos</h3>
+                            <p class="section-description">Gestiona tus datos y respaldos</p>
+                        </div>
+                    </div>
+                    <div class="section-content">
+                        <div class="backup-actions">
+                            <div class="backup-item">
+                                <div class="backup-info">
+                                    <h4 class="backup-title">Exportar Datos</h4>
+                                    <p class="backup-description">Descargar todos tus datos en formato CSV</p>
+                                </div>
+                                <button class="btn btn-secondary">Exportar</button>
+                            </div>
+                            
+                            <div class="backup-item">
+                                <div class="backup-info">
+                                    <h4 class="backup-title">Respaldo Completo</h4>
+                                    <p class="backup-description">Crear un respaldo completo del sistema</p>
+                                </div>
+                                <button class="btn btn-secondary">Crear Respaldo</button>
+                            </div>
+                            
+                            <div class="backup-item">
+                                <div class="backup-info">
+                                    <h4 class="backup-title">Restaurar Datos</h4>
+                                    <p class="backup-description">Restaurar desde un respaldo anterior</p>
+                                </div>
+                                <button class="btn btn-warning">Restaurar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/global.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/configuracion.js"></script>
+</body>
+</html>

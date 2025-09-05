@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoStudio - Pedidos</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/pedidos.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    
+        <button type="button" class="sidebar-toggle" title="Toggle sidebar">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+   </button>
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo" data-nav="dashboard.html">
+                <span class="sidebar-logo-text">FotoStudio</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar">
+                <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+            </div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name" data-user-name>Usuario</div>
+                <div class="sidebar-user-role">Administrador</div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Principal</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
+                            <div class="sidebar-menu-icon">📊</div>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Gestión</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link active">
+                            <div class="sidebar-menu-icon">📋</div>
+                            Pedidos
+                            <span class="sidebar-badge">12</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">👥</div>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
+                            <div class="sidebar-menu-icon">📦</div>
+                            Inventario
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
+                            <div class="sidebar-menu-icon">🏭</div>
+                            Producción
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Comercial</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">📄</div>
+                            Contratos
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
+                            <div class="sidebar-menu-icon">✅</div>
+                            Productos Terminados
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">📅</div>
+                            Agenda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Análisis</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
+                            <div class="sidebar-menu-icon">📈</div>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                            <div class="sidebar-menu-icon">⚙️</div>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" data-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <div class="dashboard-content">
+            <div class="pedidos-header">
+                <div>
+                    <h1 class="dashboard-title">Gestión de Pedidos</h1>
+                    <p class="dashboard-subtitle">Administra todos los pedidos de tu estudio</p>
+                </div>
+                
+                <div class="pedidos-filters">
+                    <div class="filter-group">
+                        <label>Estado:</label>
+                        <select class="filter-select" id="statusFilter" title="Seleccione el estado del pedido">
+                            <option value="">Todos</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="proceso">En Proceso</option>
+                            <option value="completado">Completado</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Servicio:</label>
+                        <select class="filter-select" id="serviceFilter" title="Seleccione el servicio del pedido">
+                            <option value="">Todos</option>
+                            <option value="fotografia">Fotografía</option>
+                            <option value="enmarcado">Enmarcado</option>
+                            <option value="impresion">Impresión</option>
+                            <option value="evento">Evento</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="openNewOrderModal()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Nuevo Pedido
+                    </button>
+                </div>
+            </div>
+            
+            <div class="pedidos-stats">
+                <div class="stat-card glow-effect">
+                    <div class="stat-value">42</div>
+                    <div class="stat-label">Total Pedidos</div>
+                    <div class="stat-trend up">↗ +12% esta semana</div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Pendientes</div>
+                    <div class="stat-trend down">↘ -5% vs anterior</div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-value">25</div>
+                    <div class="stat-label">En Proceso</div>
+                    <div class="stat-trend up">↗ +8% en progreso</div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-value">S/ 12,450</div>
+                    <div class="stat-label">Ingresos del Mes</div>
+                    <div class="stat-trend up">↗ +15% vs mes anterior</div>
+                </div>
+            </div>
+            
+            <div class="pedidos-table-container">
+                <div class="table-header">
+                    <h3 class="table-title">Lista de Pedidos</h3>
+                    <div class="table-actions">
+                        <div class="dashboard-search">
+                            <svg class="dashboard-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                            </svg>
+                            <input type="text" placeholder="Buscar pedidos..." id="searchInput">
+                        </div>
+                        
+                        <button class="btn btn-secondary btn-sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Exportar
+                        </button>
+                    </div>
+                </div>
+                
+                <table class="pedidos-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Servicio</th>
+                            <th>Estado</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                </table>
+                
+                <div class="pagination">
+                    <span class="pagination-info">Mostrando 1-10 de 42 pedidos</span>
+                    <div class="pagination-buttons">
+                        <button class="pagination-btn" disabled>←</button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="modal-overlay" id="newOrderModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Nuevo Pedido</h3>
+            </div>
+            <div class="modal-body">
+                <form id="newOrderForm">
+                    <div class="form-group">
+                        <label class="form-label">Cliente</label>
+                        <select class="form-control" required aria-label="Seleccione un cliente">
+                            <option value="">Seleccionar cliente</option>
+                            <option value="1">María García</option>
+                            <option value="2">Juan Pérez</option>
+                            <option value="3">Ana López</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="servicio-select">Servicio</label>
+                            <select class="form-control" id="servicio-select" required>
+                                <option value="">Seleccionar servicio</option>
+                                <option value="fotografia">Fotografía</option>
+                                <option value="enmarcado">Enmarcado</option>
+                                <option value="impresion">Impresión</option>
+                                <option value="evento">Evento</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Monto</label>
+                            <input type="number" class="form-control" placeholder="0.00" step="0.01" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Fecha de Entrega</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Estado</label>
+                            <select class="form-control" required title="Estado del pedido">
+                                <option value="pendiente">Pendiente</option>
+                                <option value="proceso">En Proceso</option>
+                                <option value="completado">Completado</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Descripción</label>
+                        <textarea class="form-control" rows="3" placeholder="Detalles del pedido..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeNewOrderModal()">Cancelar</button>
+                <button type="submit" class="btn btn-primary" form="newOrderForm">Crear Pedido</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/global.js"></script>
+    <script src="js/glowing-effect.js"></script>
+    <script src="js/pedidos.js"></script>
+</body>
+</html>
+                    </thead>
+                    <tbody id="pedidosTableBody">
+                        <tr>
+                            <td><span class="order-id">#ORD-001</span></td>
+                            <td>
+                                <div class="client-info">
+                                    <div class="client-avatar">MG</div>
+                                    <div class="client-details">
+                                        <div class="client-name">María García</div>
+                                        <div class="client-email">maria@email.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="service-tag service-fotografia">Fotografía</span></td>
+                            <td><span class="status-badge status-proceso">En Proceso</span></td>
+                            <td><span class="amount">S/ 450.00</span></td>
+                            <td><span class="date-cell">15 Dic 2024</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view" title="Ver detalles">👁️</button>
+                                    <button class="action-btn edit" title="Editar">✏️</button>
+                                    <button class="action-btn delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="order-id">#ORD-002</span></td>
+                            <td>
+                                <div class="client-info">
+                                    <div class="client-avatar">JP</div>
+                                    <div class="client-details">
+                                        <div class="client-name">Juan Pérez</div>
+                                        <div class="client-email">juan@email.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="service-tag service-enmarcado">Enmarcado</span></td>
+                            <td><span class="status-badge status-completado">Completado</span></td>
+                            <td><span class="amount">S/ 120.00</span></td>
+                            <td><span class="date-cell">12 Dic 2024</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view" title="Ver detalles">👁️</button>
+                                    <button class="action-btn edit" title="Editar">✏️</button>
+                                    <button class="action-btn delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="order-id">#ORD-003</span></td>
+                            <td>
+                                <div class="client-info">
+                                    <div class="client-avatar">AL</div>
+                                    <div class="client-details">
+                                        <div class="client-name">Ana López</div>
+                                        <div class="client-email">ana@email.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="service-tag service-evento">Evento</span></td>
+                            <td><span class="status-badge status-pendiente">Pendiente</span></td>
+                            <td><span class="amount">S/ 800.00</span></td>
+                            <td><span class="date-cell">18 Dic 2024</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view" title="Ver detalles">👁️</button>
+                                    <button class="action-btn edit" title="Editar">✏️</button>
+                                    <button class="action-btn delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>

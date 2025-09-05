@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoStudio - Clientes</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/clientes.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    
+    <button type="button" class="sidebar-toggle" title="Toggle sidebar">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+         </svg>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo" data-nav="dashboard.html">
+                <span class="sidebar-logo-text">FotoStudio</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar">
+                <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+            </div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name" data-user-name>Usuario</div>
+                <div class="sidebar-user-role">Administrador</div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Principal</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
+                            <div class="sidebar-menu-icon">📊</div>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Gestión</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">📋</div>
+                            Pedidos
+                            <span class="sidebar-badge">12</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link active">
+                            <div class="sidebar-menu-icon">👥</div>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
+                            <div class="sidebar-menu-icon">📦</div>
+                            Inventario
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
+                            <div class="sidebar-menu-icon">🏭</div>
+                            Producción
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Comercial</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">📄</div>
+                            Contratos
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
+                            <div class="sidebar-menu-icon">✅</div>
+                            Productos Terminados
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">📅</div>
+                            Agenda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Análisis</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
+                            <div class="sidebar-menu-icon">📈</div>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                            <div class="sidebar-menu-icon">⚙️</div>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" data-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <div class="dashboard-content">
+            <div class="clientes-header">
+                <div>
+                    <h1 class="dashboard-title">Gestión de Clientes</h1>
+                    <p class="dashboard-subtitle">Administra tu base de datos de clientes</p>
+                </div>
+                
+                <div class="clientes-actions">
+                    <div class="view-toggle">
+                        <button class="view-toggle-btn active" data-view="grid">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            Tarjetas
+                        </button>
+                        <button class="view-toggle-btn" data-view="table">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"></path>
+                                <path d="M3 12h18"></path>
+                                <path d="M3 18h18"></path>
+                            </svg>
+                            Tabla
+                        </button>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="openNewClientModal()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Nuevo Cliente
+                    </button>
+                </div>
+            </div>
+            
+            <div class="clientes-stats">
+                <div class="stat-card glow-effect">
+                    <div class="stat-value">156</div>
+                    <div class="stat-label">Total Clientes</div>
+                    <div class="stat-trend up">+15% este mes</div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-value">89</div>
+                    <div class="stat-label">Clientes Activos</div>
+                    <div class="stat-trend up">+8% esta semana</div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Nuevos este Mes</div>
+                    <div class="stat-trend up">+20% vs anterior</div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-value">S/ 8,450</div>
+                    <div class="stat-label">Valor Promedio</div>
+                    <div class="stat-trend up">+5% incremento</div>
+                </div>
+            </div>
+            
+            <div class="clients-search-filters">
+                <div class="search-box">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" placeholder="Buscar clientes por nombre, email o teléfono..." id="clientsSearch">
+                </div>
+                
+                <div class="filter-dropdown">
+                    <select class="status-filter" title="Estado del cliente">
+                        <option value="">Todos los estados</option>
+                        <option value="activo">Activos</option>
+                        <option value="inactivo">Inactivos</option>
+                        <option value="nuevo">Nuevos</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="clientsGridView" class="clients-grid">
+                <div class="client-card glow-effect">
+                    <div class="client-header">
+                        <div class="client-avatar">MG</div>
+                        <div class="client-info">
+                            <div class="client-name">María García</div>
+                            <div class="client-email">maria.garcia@email.com</div>
+                            <div class="client-phone">📞 +51 987 654 321</div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-stats">
+                        <div class="client-stat">
+                            <div class="client-stat-value">8</div>
+                            <div class="client-stat-label">Pedidos</div>
+                        </div>
+                        <div class="client-stat">
+                            <div class="client-stat-value">S/ 2,400</div>
+                            <div class="client-stat-label">Total</div>
+                        </div>
+                        <div class="client-stat">
+                            <div class="client-stat-value">4.8</div>
+                            <div class="client-stat-label">Rating</div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-tags">
+                        <span class="client-tag">VIP</span>
+                        <span class="client-tag">Fotografía</span>
+                    </div>
+                    
+                    <div class="client-actions">
+                        <button class="client-action-btn primary" title="Ver perfil">👤</button>
+                        <button class="client-action-btn secondary" title="Editar">✏️</button>
+                        <button class="client-action-btn secondary" title="Contactar">📧</button>
+                        <button class="client-action-btn danger" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+                
+                <div class="client-card glow-effect">
+                    <div class="client-header">
+                        <div class="client-avatar">JP</div>
+                        <div class="client-info">
+                            <div class="client-name">Juan Pérez</div>
+                            <div class="client-email">juan.perez@email.com</div>
+                            <div class="client-phone">📞 +51 987 123 456</div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-stats">
+                        <div class="client-stat">
+                            <div class="client-stat-value">3</div>
+                            <div class="client-stat-label">Pedidos</div>
+                        </div>
+                        <div class="client-stat">
+                            <div class="client-stat-value">S/ 680</div>
+                            <div class="client-stat-label">Total</div>
+                        </div>
+                        <div class="client-stat">
+                            <div class="client-stat-value">4.5</div>
+                            <div class="client-stat-label">Rating</div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-tags">
+                        <span class="client-tag">Enmarcado</span>
+                    </div>
+                    
+                    <div class="client-actions">
+                        <button class="client-action-btn primary" title="Ver perfil">👤</button>
+                        <button class="client-action-btn secondary" title="Editar">✏️</button>
+                        <button class="client-action-btn secondary" title="Contactar">📧</button>
+                        <button class="client-action-btn danger" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+                
+                <div class="client-card glow-effect">
+                    <div class="client-header">
+                        <div class="client-avatar">AL</div>
+                        <div class="client-info">
+                            <div class="client-name">Ana López</div>
+                            <div class="client-email">ana.lopez@email.com</div>
+                            <div class="client-phone">📞 +51 987 789 123</div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-stats">
+                        <div class="client-stat">
+                            <div class="client-stat-value">12</div>
+                            <div class="client-stat-label">Pedidos</div>
+                        </div>
+                        <div class="client-stat">
+                            <div class="client-stat-value">S/ 3,200</div>
+                            <div class="client-stat-label">Total</div>
+                        </div>
+                        <div class="client-stat">
+                            <div class="client-stat-value">5.0</div>
+                            <div class="client-stat-label">Rating</div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-tags">
+                        <span class="client-tag">Premium</span>
+                        <span class="client-tag">Eventos</span>
+                        <span class="client-tag">Fotografía</span>
+                    </div>
+                    
+                    <div class="client-actions">
+                        <button class="client-action-btn primary" title="Ver perfil">👤</button>
+                        <button class="client-action-btn secondary" title="Editar">✏️</button>
+                        <button class="client-action-btn secondary" title="Contactar">📧</button>
+                        <button class="client-action-btn danger" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="clientsTableView" class="clients-table-view">
+                <div class="table-header">
+                    <h3 class="table-title">Lista de Clientes</h3>
+                </div>
+                
+                <table class="clients-table">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Teléfono</th>
+                            <th>Pedidos</th>
+                            <th>Total Gastado</th>
+                            <th>Último Pedido</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="table-client-info">
+                                    <div class="table-client-avatar">MG</div>
+                                    <div class="table-client-details">
+                                        <div class="table-client-name">María García</div>
+                                        <div class="table-client-email">maria.garcia@email.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>+51 987 654 321</td>
+                            <td>8</td>
+                            <td>S/ 2,400</td>
+                            <td>15 Dic 2024</td>
+                            <td><span class="badge badge-success">Activo</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view" title="Ver perfil">👤</button>
+                                    <button class="action-btn edit" title="Editar">✏️</button>
+                                    <button class="action-btn delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="table-client-info">
+                                    <div class="table-client-avatar">JP</div>
+                                    <div class="table-client-details">
+                                        <div class="table-client-name">Juan Pérez</div>
+                                        <div class="table-client-email">juan.perez@email.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>+51 987 123 456</td>
+                            <td>3</td>
+                            <td>S/ 680</td>
+                            <td>12 Dic 2024</td>
+                            <td><span class="badge badge-success">Activo</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view" title="Ver perfil">👤</button>
+                                    <button class="action-btn edit" title="Editar">✏️</button>
+                                    <button class="action-btn delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/global.js"></script>
+    <script src="js/glowing-effect.js"></script>
+    <script src="js/clientes.js"></script>
+</body>
+</html>

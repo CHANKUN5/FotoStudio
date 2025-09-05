@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoStudio - Productos Terminados</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/productos-terminados.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    
+    <button type="button" class="sidebar-toggle">
+        Toggle sidebar
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <span class="sidebar-logo-text">FotoStudio</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar">
+                <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+            </div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name" data-user-name>Usuario</div>
+                <div class="sidebar-user-role">Administrador</div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Principal</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
+                            <div class="sidebar-menu-icon">📊</div>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Gestión</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">📋</div>
+                            Pedidos
+                            <span class="sidebar-badge">12</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">👥</div>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
+                            <div class="sidebar-menu-icon">📦</div>
+                            Inventario
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
+                            <div class="sidebar-menu-icon">🏭</div>
+                            Producción
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Comercial</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">📄</div>
+                            Contratos
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="productos-terminados.html" class="sidebar-menu-link active">
+                            <div class="sidebar-menu-icon">✅</div>
+                            Productos Terminados
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">📅</div>
+                            Agenda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Análisis</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
+                            <div class="sidebar-menu-icon">📈</div>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                            <div class="sidebar-menu-icon">⚙️</div>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" data-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Productos Terminados</h1>
+                <p class="dashboard-subtitle">Gestiona productos listos para entrega</p>
+            </div>
+            
+            <div class="dashboard-actions">
+                <div class="dashboard-search">
+                    <svg class="dashboard-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" placeholder="Buscar productos...">
+                </div>
+                
+                <div class="dashboard-user">
+                    <div class="avatar avatar-md">
+                        <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+                    </div>
+                    <span data-user-name>Usuario</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <div class="productos-stats">
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-content">
+                        <div class="stat-value">45</div>
+                        <div class="stat-label">Listos para Entrega</div>
+                        <div class="stat-trend up">+8 esta semana</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-content">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Pendientes de Recoger</div>
+                        <div class="stat-trend warning">⚠️ 3 días promedio</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <div class="stat-value">156</div>
+                        <div class="stat-label">Entregados este Mes</div>
+                        <div class="stat-trend up">+15% vs anterior</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <div class="stat-value">S/ 18,450</div>
+                        <div class="stat-label">Valor en Stock</div>
+                        <div class="stat-trend up">+22% incremento</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="productos-filters">
+                <div class="filter-group">
+                    <label>Tipo:</label>
+                    <select class="filter-select">
+                        <option value="">Todos</option>
+                        <option value="fotos">Fotos</option>
+                        <option value="marco">Enmarcados</option>
+                        <option value="album">Álbumes</option>
+                        <option value="canvas">Canvas</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Estado:</label>
+                    <select class="filter-select">
+                        <option value="">Todos</option>
+                        <option value="listo">Listo</option>
+                        <option value="pendiente">Pendiente</option>
+                        <option value="entregado">Entregado</option>
+                    </select>
+                </div>
+                
+                <button class="btn btn-primary" onclick="openNewProductModal()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Marcar como Terminado
+                </button>
+            </div>
+            
+            <div class="productos-grid">
+                <div class="product-card glow-effect">
+                    <div class="product-image">
+                        <div class="product-preview">📷</div>
+                        <div class="product-status status-listo">Listo</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-id">#PROD-001</div>
+                        <div class="product-title">Sesión Familiar - 20 Fotos</div>
+                        <div class="product-client">Cliente: María García</div>
+                        <div class="product-details">
+                            <span class="product-type">📷 Fotografía</span>
+                            <span class="product-size">20x30 cm</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="product-date">📅 15 Dic 2024</span>
+                            <span class="product-value">S/ 450</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn btn-sm btn-primary">Entregar</button>
+                        <button class="btn btn-sm btn-secondary">Ver</button>
+                        <button class="btn btn-sm btn-outline">📱</button>
+                    </div>
+                </div>
+                
+                <div class="product-card glow-effect">
+                    <div class="product-image">
+                        <div class="product-preview">🖼️</div>
+                        <div class="product-status status-pendiente">Pendiente</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-id">#PROD-002</div>
+                        <div class="product-title">Marco Dorado 30x40</div>
+                        <div class="product-client">Cliente: Juan Pérez</div>
+                        <div class="product-details">
+                            <span class="product-type">🖼️ Enmarcado</span>
+                            <span class="product-size">30x40 cm</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="product-date">📅 18 Dic 2024</span>
+                            <span class="product-value">S/ 120</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn btn-sm btn-warning">En Proceso</button>
+                        <button class="btn btn-sm btn-secondary">Ver</button>
+                        <button class="btn btn-sm btn-outline">📱</button>
+                    </div>
+                </div>
+                
+                <div class="product-card glow-effect">
+                    <div class="product-image">
+                        <div class="product-preview">📖</div>
+                        <div class="product-status status-listo">Listo</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-id">#PROD-003</div>
+                        <div class="product-title">Álbum de Bodas</div>
+                        <div class="product-client">Cliente: Ana López</div>
+                        <div class="product-details">
+                            <span class="product-type">📖 Álbum</span>
+                            <span class="product-size">50 páginas</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="product-date">📅 20 Dic 2024</span>
+                            <span class="product-value">S/ 800</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn btn-sm btn-primary">Entregar</button>
+                        <button class="btn btn-sm btn-secondary">Ver</button>
+                        <button class="btn btn-sm btn-outline">📱</button>
+                    </div>
+                </div>
+                
+                <div class="product-card glow-effect">
+                    <div class="product-image">
+                        <div class="product-preview">🎨</div>
+                        <div class="product-status status-entregado">Entregado</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-id">#PROD-004</div>
+                        <div class="product-title">Canvas 40x60</div>
+                        <div class="product-client">Cliente: Carlos Ruiz</div>
+                        <div class="product-details">
+                            <span class="product-type">🎨 Canvas</span>
+                            <span class="product-size">40x60 cm</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="product-date">📅 12 Dic 2024</span>
+                            <span class="product-value">S/ 350</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn btn-sm btn-success">✅ Entregado</button>
+                        <button class="btn btn-sm btn-secondary">Ver</button>
+                        <button class="btn btn-sm btn-outline">📱</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="productos-table-container">
+                <div class="table-header">
+                    <h3 class="table-title">Lista Detallada</h3>
+                    <div class="table-actions">
+                        <button class="btn btn-secondary btn-sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Exportar
+                        </button>
+                    </div>
+                </div>
+                
+                <table class="productos-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Cliente</th>
+                            <th>Tipo</th>
+                            <th>Fecha</th>
+                            <th>Valor</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="product-id">#PROD-001</span></td>
+                            <td>
+                                <div class="product-info-cell">
+                                    <div class="product-preview-small">📷</div>
+                                    <div>
+                                        <div class="product-name">Sesión Familiar</div>
+                                        <div class="product-desc">20 fotos 20x30</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>María García</td>
+                            <td><span class="product-type-tag type-fotos">Fotos</span></td>
+                            <td>15 Dic 2024</td>
+                            <td>S/ 450</td>
+                            <td><span class="status-badge status-listo">Listo</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn primary" title="Entregar">📦</button>
+                                    <button class="action-btn secondary" title="Ver">👁️</button>
+                                    <button class="action-btn info" title="Contactar">📱</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="product-id">#PROD-002</span></td>
+                            <td>
+                                <div class="product-info-cell">
+                                    <div class="product-preview-small">🖼️</div>
+                                    <div>
+                                        <div class="product-name">Marco Dorado</div>
+                                        <div class="product-desc">30x40 cm</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Juan Pérez</td>
+                            <td><span class="product-type-tag type-marco">Enmarcado</span></td>
+                            <td>18 Dic 2024</td>
+                            <td>S/ 120</td>
+                            <td><span class="status-badge status-pendiente">Pendiente</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn warning" title="En Proceso">⏳</button>
+                                    <button class="action-btn secondary" title="Ver">👁️</button>
+                                    <button class="action-btn info" title="Contactar">📱</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="pagination">
+                    <span class="pagination-info">Mostrando 1-10 de 45 productos</span>
+                    <div class="pagination-buttons">
+                        <button class="pagination-btn" disabled>←</button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/global.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/productos-terminados.js"></script>
+</body>
+</html>

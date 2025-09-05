@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoStudio - Reportes</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/reportes.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    
+    <button type="button" class="sidebar-toggle" title="Toggle sidebar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo" data-nav="dashboard.html">
+                <span class="sidebar-logo-text">FotoStudio</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar">
+                <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+            </div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name" data-user-name>Usuario</div>
+                <div class="sidebar-user-role">Administrador</div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Principal</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
+                            <div class="sidebar-menu-icon">📊</div>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Gestión</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">📋</div>
+                            Pedidos
+                            <span class="sidebar-badge">12</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">👥</div>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
+                            <div class="sidebar-menu-icon">📦</div>
+                            Inventario
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
+                            <div class="sidebar-menu-icon">🏭</div>
+                            Producción
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Comercial</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">📄</div>
+                            Contratos
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
+                            <div class="sidebar-menu-icon">✅</div>
+                            Productos Terminados
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">📅</div>
+                            Agenda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Análisis</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="reportes.html" class="sidebar-menu-link active">
+                            <div class="sidebar-menu-icon">📈</div>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                            <div class="sidebar-menu-icon">⚙️</div>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" data-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <div class="dashboard-content">
+            <div class="reportes-header">
+                <div>
+                    <h1 class="dashboard-title">Reportes y Análisis</h1>
+                    <p class="dashboard-subtitle">Análisis detallado del rendimiento de tu estudio</p>
+                </div>
+                
+                <div class="reportes-filters">
+                    <select class="period-filter" id="periodFilter" title="Seleccione un período de tiempo">
+                       <option value="7">Últimos 7 días</option>
+                       <option value="30" selected>Últimos 30 días</option>
+                       <option value="90">Últimos 3 meses</option>
+                       <option value="365">Último año</option>
+                    </select>
+                    
+                    <button class="btn btn-primary" onclick="exportReport()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Exportar PDF
+                    </button>
+                </div>
+            </div>
+            
+            <div class="reportes-overview">
+                <div class="overview-card glow-effect">
+                    <div class="overview-icon">💰</div>
+                    <div class="overview-content">
+                        <div class="overview-value" id="totalRevenue">S/ 24,650</div>
+                        <div class="overview-label">Ingresos Totales</div>
+                        <div class="overview-change positive">↗ +18.5% vs período anterior</div>
+                    </div>
+                </div>
+                
+                <div class="overview-card glow-effect">
+                    <div class="overview-icon">📋</div>
+                    <div class="overview-content">
+                        <div class="overview-value" id="totalOrders">156</div>
+                        <div class="overview-label">Pedidos Completados</div>
+                        <div class="overview-change positive">↗ +12.3% incremento</div>
+                    </div>
+                </div>
+                
+                <div class="overview-card glow-effect">
+                    <div class="overview-icon">👥</div>
+                    <div class="overview-content">
+                        <div class="overview-value" id="newClients">24</div>
+                        <div class="overview-label">Nuevos Clientes</div>
+                        <div class="overview-change positive">↗ +8 este mes</div>
+                    </div>
+                </div>
+                
+                <div class="overview-card glow-effect">
+                    <div class="overview-icon">⭐</div>
+                    <div class="overview-content">
+                        <div class="overview-value" id="avgRating">4.8</div>
+                        <div class="overview-label">Rating Promedio</div>
+                        <div class="overview-change positive">↗ +0.2 mejoría</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reportes-charts">
+                <div class="chart-section glow-effect">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Tendencia de Ingresos</h3>
+                        <p class="chart-subtitle">Ingresos mensuales en los últimos 12 meses</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="revenueChart" class="chart-canvas"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-section glow-effect">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Distribución de Servicios</h3>
+                        <p class="chart-subtitle">Porcentaje por tipo de servicio</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="servicesChart" class="chart-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reportes-details">
+                <div class="details-section glow-effect">
+                    <div class="section-header">
+                        <h3 class="section-title">Top Clientes</h3>
+                        <p class="section-subtitle">Clientes con mayor volumen de compras</p>
+                    </div>
+                    <div class="top-clients">
+                        <div class="client-item">
+                            <div class="client-rank">1</div>
+                            <div class="client-info">
+                                <div class="client-name">María García</div>
+                                <div class="client-orders">12 pedidos</div>
+                            </div>
+                            <div class="client-amount">S/ 2,850</div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-rank">2</div>
+                            <div class="client-info">
+                                <div class="client-name">Juan Pérez</div>
+                                <div class="client-orders">8 pedidos</div>
+                            </div>
+                            <div class="client-amount">S/ 1,650</div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-rank">3</div>
+                            <div class="client-info">
+                                <div class="client-name">Ana López</div>
+                                <div class="client-orders">6 pedidos</div>
+                            </div>
+                            <div class="client-amount">S/ 1,200</div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-rank">4</div>
+                            <div class="client-info">
+                                <div class="client-name">Carlos Ruiz</div>
+                                <div class="client-orders">5 pedidos</div>
+                            </div>
+                            <div class="client-amount">S/ 980</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="details-section glow-effect">
+                    <div class="section-header">
+                        <h3 class="section-title">Servicios Populares</h3>
+                        <p class="section-subtitle">Servicios más solicitados</p>
+                    </div>
+                    <div class="popular-services">
+                        <div class="service-item">
+                            <div class="service-icon">📷</div>
+                            <div class="service-info">
+                                <div class="service-name">Sesiones Fotográficas</div>
+                                <div class="service-stats">45% del total</div>
+                            </div>
+                            <div class="service-progress">
+                                <div class="progress-bar" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🖼️</div>
+                            <div class="service-info">
+                                <div class="service-name">Enmarcado</div>
+                                <div class="service-stats">25% del total</div>
+                            </div>
+                            <div class="service-progress">
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🎉</div>
+                            <div class="service-info">
+                                <div class="service-name">Eventos</div>
+                                <div class="service-stats">20% del total</div>
+                            </div>
+                            <div class="service-progress">
+                                <div class="progress-bar" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🖨️</div>
+                            <div class="service-info">
+                                <div class="service-name">Impresión</div>
+                                <div class="service-stats">10% del total</div>
+                            </div>
+                            <div class="service-progress">
+                                <div class="progress-bar" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reportes-metrics">
+                <div class="metrics-section glow-effect">
+                    <div class="section-header">
+                        <h3 class="section-title">Métricas de Rendimiento</h3>
+                        <p class="section-subtitle">Indicadores clave de rendimiento</p>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-label">Ticket Promedio</div>
+                            <div class="metric-value">S/ 285</div>
+                            <div class="metric-trend positive">+12%</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">Tiempo Promedio de Entrega</div>
+                            <div class="metric-value">5.2 días</div>
+                            <div class="metric-trend positive">-0.8d</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">Tasa de Retención</div>
+                            <div class="metric-value">78%</div>
+                            <div class="metric-trend positive">+5%</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">Proyectos Cancelados</div>
+                            <div class="metric-value">3%</div>
+                            <div class="metric-trend negative">+1%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metrics-section glow-effect">
+                    <div class="section-header">
+                        <h3 class="section-title">Análisis Temporal</h3>
+                        <p class="section-subtitle">Distribución por días de la semana</p>
+                    </div>
+                    <div class="temporal-analysis">
+                        <div class="day-analysis">
+                            <div class="day-name">Lunes</div>
+                            <div class="day-bar">
+                                <div class="day-progress" style="width: 60%"></div>
+                            </div>
+                            <div class="day-value">60%</div>
+                        </div>
+                        <div class="day-analysis">
+                            <div class="day-name">Martes</div>
+                            <div class="day-bar">
+                                <div class="day-progress" style="width: 75%"></div>
+                            </div>
+                            <div class="day-value">75%</div>
+                        </div>
+                        <div class="day-analysis">
+                            <div class="day-name">Miércoles</div>
+                            <div class="day-bar">
+                                <div class="day-progress" style="width: 85%"></div>
+                            </div>
+                            <div class="day-value">85%</div>
+                        </div>
+                        <div class="day-analysis">
+                            <div class="day-name">Jueves</div>
+                            <div class="day-bar">
+                                <div class="day-progress" style="width: 90%"></div>
+                            </div>
+                            <div class="day-value">90%</div>
+                        </div>
+                        <div class="day-analysis">
+                            <div class="day-name">Viernes</div>
+                            <div class="day-bar">
+                                <div class="day-progress" style="width: 100%"></div>
+                            </div>
+                            <div class="day-value">100%</div>
+                        </div>
+                        <div class="day-analysis">
+                            <div class="day-name">Sábado</div>
+                            <div class="day-bar">
+                                <div class="day-progress" style="width: 95%"></div>
+                            </div>
+                            <div class="day-value">95%</div>
+                        </div>
+                        <div class="day-analysis">
+                            <div class="day-name">Domingo</div>
+                            <div class="day-bar">
+                                <div class="day-progress" style="width: 40%"></div>
+                            </div>
+                            <div class="day-value">40%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/global.js"></script>
+    <script src="js/glowing-effect.js"></script>
+    <script src="js/reportes.js"></script>
+</body>
+</html>

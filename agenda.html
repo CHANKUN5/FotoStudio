@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoStudio - Agenda</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/agenda.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    
+    <button type="button" class="sidebar-toggle">
+        Toggle sidebar
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <span class="sidebar-logo-text">FotoStudio</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar">
+                <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+            </div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name" data-user-name>Usuario</div>
+                <div class="sidebar-user-role">Administrador</div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Principal</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
+                            <div class="sidebar-menu-icon">📊</div>
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Gestión</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">📋</div>
+                            Pedidos
+                            <span class="sidebar-badge">12</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">👥</div>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
+                            <div class="sidebar-menu-icon">📦</div>
+                            Inventario
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
+                            <div class="sidebar-menu-icon">🏭</div>
+                            Producción
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Comercial</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">📄</div>
+                            Contratos
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
+                            <div class="sidebar-menu-icon">✅</div>
+                            Productos Terminados
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link active">
+                            <div class="sidebar-menu-icon">📅</div>
+                            Agenda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Análisis</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
+                            <div class="sidebar-menu-icon">📈</div>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                            <div class="sidebar-menu-icon">⚙️</div>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" data-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Agenda de Citas</h1>
+                <p class="dashboard-subtitle">Gestiona tu calendario y citas con clientes</p>
+            </div>
+            
+            <div class="dashboard-actions">
+                <div class="dashboard-search">
+                    <svg class="dashboard-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" placeholder="Buscar citas...">
+                </div>
+                
+                <div class="dashboard-user">
+                    <div class="avatar avatar-md">
+                        <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+                    </div>
+                    <span data-user-name>Usuario</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <div class="agenda-stats">
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Citas Hoy</div>
+                        <div class="stat-trend up">+2 vs ayer</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-content">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Próximas 2 Horas</div>
+                        <div class="stat-trend warning">⚠️ Prepárate</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-content">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Esta Semana</div>
+                        <div class="stat-trend up">+5 vs anterior</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card glow-effect">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <div class="stat-value">89%</div>
+                        <div class="stat-label">Asistencia</div>
+                        <div class="stat-trend up">+3% mejoría</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agenda-layout">
+                <div class="calendar-section">
+                    <div class="calendar-header">
+                        <h3>Calendario</h3>
+                        <div class="calendar-controls">
+                            <button class="btn btn-sm btn-secondary" onclick="previousMonth()">←</button>
+                            <span class="current-month">Diciembre 2024</span>
+                            <button class="btn btn-sm btn-secondary" onclick="nextMonth()">→</button>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <div class="calendar-weekdays">
+                            <div class="weekday">Lun</div>
+                            <div class="weekday">Mar</div>
+                            <div class="weekday">Mié</div>
+                            <div class="weekday">Jue</div>
+                            <div class="weekday">Vie</div>
+                            <div class="weekday">Sáb</div>
+                            <div class="weekday">Dom</div>
+                        </div>
+                        
+                        <div class="calendar-days">
+                            <div class="calendar-day other-month">25</div>
+                            <div class="calendar-day other-month">26</div>
+                            <div class="calendar-day other-month">27</div>
+                            <div class="calendar-day other-month">28</div>
+                            <div class="calendar-day other-month">29</div>
+                            <div class="calendar-day other-month">30</div>
+                            <div class="calendar-day">1</div>
+                            
+                            <div class="calendar-day">2</div>
+                            <div class="calendar-day">3</div>
+                            <div class="calendar-day">4</div>
+                            <div class="calendar-day">5</div>
+                            <div class="calendar-day">6</div>
+                            <div class="calendar-day">7</div>
+                            <div class="calendar-day">8</div>
+                            
+                            <div class="calendar-day">9</div>
+                            <div class="calendar-day">10</div>
+                            <div class="calendar-day">11</div>
+                            <div class="calendar-day">12</div>
+                            <div class="calendar-day">13</div>
+                            <div class="calendar-day">14</div>
+                            <div class="calendar-day">15</div>
+                            
+                            <div class="calendar-day">16</div>
+                            <div class="calendar-day">17</div>
+                            <div class="calendar-day">18</div>
+                            <div class="calendar-day">19</div>
+                            <div class="calendar-day">20</div>
+                            <div class="calendar-day">21</div>
+                            <div class="calendar-day">22</div>
+                            
+                            <div class="calendar-day">23</div>
+                            <div class="calendar-day">24</div>
+                            <div class="calendar-day">25</div>
+                            <div class="calendar-day">26</div>
+                            <div class="calendar-day">27</div>
+                            <div class="calendar-day">28</div>
+                            <div class="calendar-day">29</div>
+                            
+                            <div class="calendar-day">30</div>
+                            <div class="calendar-day">31</div>
+                            <div class="calendar-day other-month">1</div>
+                            <div class="calendar-day other-month">2</div>
+                            <div class="calendar-day other-month">3</div>
+                            <div class="calendar-day other-month">4</div>
+                            <div class="calendar-day other-month">5</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="appointments-section">
+                    <div class="appointments-header">
+                        <h3>Citas de Hoy</h3>
+                        <button class="btn btn-primary btn-sm" onclick="openNewAppointmentModal()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Nueva Cita
+                        </button>
+                    </div>
+                    
+                    <div class="appointments-list">
+                        <div class="appointment-item">
+                            <div class="appointment-time">
+                                <div class="time-hour">09:00</div>
+                                <div class="time-duration">2h</div>
+                            </div>
+                            <div class="appointment-content">
+                                <div class="appointment-title">Sesión Fotográfica Familiar</div>
+                                <div class="appointment-client">👤 María García</div>
+                                <div class="appointment-location">📍 Estudio Principal</div>
+                                <div class="appointment-notes">Sesión familiar con 3 niños</div>
+                            </div>
+                            <div class="appointment-status status-confirmed">✅</div>
+                        </div>
+                        
+                        <div class="appointment-item">
+                            <div class="appointment-time">
+                                <div class="time-hour">11:30</div>
+                                <div class="time-duration">1h</div>
+                            </div>
+                            <div class="appointment-content">
+                                <div class="appointment-title">Consulta de Enmarcado</div>
+                                <div class="appointment-client">👤 Juan Pérez</div>
+                                <div class="appointment-location">📍 Sala de Reuniones</div>
+                                <div class="appointment-notes">Revisión de opciones de marco</div>
+                            </div>
+                            <div class="appointment-status status-confirmed">✅</div>
+                        </div>
+                        
+                        <div class="appointment-item">
+                            <div class="appointment-time">
+                                <div class="time-hour">14:00</div>
+                                <div class="time-duration">3h</div>
+                            </div>
+                            <div class="appointment-content">
+                                <div class="appointment-title">Evento Corporativo</div>
+                                <div class="appointment-client">👤 Ana López</div>
+                                <div class="appointment-location">📍 Hotel Plaza</div>
+                                <div class="appointment-notes">Fotografía de evento empresarial</div>
+                            </div>
+                            <div class="appointment-status status-confirmed">✅</div>
+                        </div>
+                        
+                        <div class="appointment-item">
+                            <div class="appointment-time">
+                                <div class="time-hour">17:00</div>
+                                <div class="time-duration">1.5h</div>
+                            </div>
+                            <div class="appointment-content">
+                                <div class="appointment-title">Entrega de Productos</div>
+                                <div class="appointment-client">👤 Carlos Ruiz</div>
+                                <div class="appointment-location">📍 Estudio Principal</div>
+                                <div class="appointment-notes">Entrega de canvas y fotos</div>
+                            </div>
+                            <div class="appointment-status status-pending">⏳</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upcoming-appointments">
+                <div class="section-header">
+                    <h3>Próximas Citas</h3>
+                    <div class="view-toggle">
+                        <button class="view-toggle-btn active" data-view="week">Semana</button>
+                        <button class="view-toggle-btn" data-view="month">Mes</button>
+                    </div>
+                </div>
+                
+                <div class="upcoming-list">
+                    <div class="upcoming-item">
+                        <div class="upcoming-date">
+                            <div class="date-day">23</div>
+                            <div class="date-month">Dic</div>
+                        </div>
+                        <div class="upcoming-content">
+                            <div class="upcoming-title">Sesión de Bodas</div>
+                            <div class="upcoming-client">👤 Roberto & Carmen</div>
+                            <div class="upcoming-time">⏰ 10:00 - 16:00</div>
+                        </div>
+                        <div class="upcoming-actions">
+                            <button class="btn btn-sm btn-secondary">Ver</button>
+                            <button class="btn btn-sm btn-outline">Editar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-item">
+                        <div class="upcoming-date">
+                            <div class="date-day">24</div>
+                            <div class="date-month">Dic</div>
+                        </div>
+                        <div class="upcoming-content">
+                            <div class="upcoming-title">Fotos Navideñas</div>
+                            <div class="upcoming-client">👤 Familia Martínez</div>
+                            <div class="upcoming-time">⏰ 15:00 - 17:00</div>
+                        </div>
+                        <div class="upcoming-actions">
+                            <button class="btn btn-sm btn-secondary">Ver</button>
+                            <button class="btn btn-sm btn-outline">Editar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-item">
+                        <div class="upcoming-date">
+                            <div class="date-day">26</div>
+                            <div class="date-month">Dic</div>
+                        </div>
+                        <div class="upcoming-content">
+                            <div class="upcoming-title">Sesión Individual</div>
+                            <div class="upcoming-client">👤 Laura González</div>
+                            <div class="upcoming-time">⏰ 11:00 - 12:30</div>
+                        </div>
+                        <div class="upcoming-actions">
+                            <button class="btn btn-sm btn-secondary">Ver</button>
+                            <button class="btn btn-sm btn-outline">Editar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="modal-overlay" id="newAppointmentModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Nueva Cita</h3>
+            </div>
+            <div class="modal-body">
+                <form id="newAppointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Cliente</label>
+                            <select class="form-control" required>
+                                <option value="">Seleccionar cliente</option>
+                                <option value="1">María García</option>
+                                <option value="2">Juan Pérez</option>
+                                <option value="3">Ana López</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Tipo de Servicio</label>
+                            <select class="form-control" required>
+                                <option value="">Seleccionar servicio</option>
+                                <option value="fotografia">Fotografía</option>
+                                <option value="evento">Evento</option>
+                                <option value="consulta">Consulta</option>
+                                <option value="entrega">Entrega</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Hora de Inicio</label>
+                            <input type="time" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Duración (horas)</label>
+                            <select class="form-control" required>
+                                <option value="0.5">30 minutos</option>
+                                <option value="1">1 hora</option>
+                                <option value="1.5">1.5 horas</option>
+                                <option value="2">2 horas</option>
+                                <option value="3">3 horas</option>
+                                <option value="4">4 horas</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Ubicación</label>
+                            <select class="form-control" required>
+                                <option value="">Seleccionar ubicación</option>
+                                <option value="estudio">Estudio Principal</option>
+                                <option value="sala">Sala de Reuniones</option>
+                                <option value="exterior">Exterior</option>
+                                <option value="cliente">En casa del cliente</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Notas</label>
+                        <textarea class="form-control" rows="3" placeholder="Detalles adicionales de la cita..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeNewAppointmentModal()">Cancelar</button>
+                <button type="submit" class="btn btn-primary" form="newAppointmentForm">Crear Cita</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/global.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/agenda.js"></script>
+</body>
+</html>
