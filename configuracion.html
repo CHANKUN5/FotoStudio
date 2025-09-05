@@ -8,22 +8,32 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/configuracion.css">
+    <link rel="stylesheet" href="styles/bubbles.css">
 </head>
 <body>
     <div class="sidebar-overlay"></div>
     
-    <button type="button" class="sidebar-toggle">
-        Toggle sidebar
+    <button type="button" class="sidebar-toggle" title="Abrir/Cerrar Menú">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
+        <span class="sr-only">Abrir/Cerrar Menú</span>
     </button>
+    
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
     
     <aside class="sidebar">
         <div class="sidebar-header">
-            <a href="dashboard.html" class="sidebar-logo">
+            <a href="dashboard.html" class="sidebar-logo" data-nav="dashboard.html">
                 <span class="sidebar-logo-text">FotoStudio</span>
             </a>
         </div>
@@ -44,8 +54,51 @@
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
-                            <div class="sidebar-menu-icon">📊</div>
-                            Dashboard
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </div>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                            </div>
+                            <span>Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span>Clientes</span>
                         </a>
                     </li>
                 </ul>
@@ -55,52 +108,39 @@
                 <div class="sidebar-section-title">Gestión</div>
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
-                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
-                            <div class="sidebar-menu-icon">📋</div>
-                            Pedidos
-                            <span class="sidebar-badge">12</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
-                            <div class="sidebar-menu-icon">👥</div>
-                            Clientes
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
                         <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
-                            <div class="sidebar-menu-icon">📦</div>
-                            Inventario
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <span>Inventario</span>
                         </a>
                     </li>
                     <li class="sidebar-menu-item">
                         <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
-                            <div class="sidebar-menu-icon">🏭</div>
-                            Producción
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <span>Producción</span>
                         </a>
                     </li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Comercial</div>
-                <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
-                            <div class="sidebar-menu-icon">📄</div>
-                            Contratos
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
-                            <div class="sidebar-menu-icon">✅</div>
-                            Productos Terminados
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
-                            <div class="sidebar-menu-icon">📅</div>
-                            Agenda
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <span>Contratos</span>
                         </a>
                     </li>
                 </ul>
@@ -111,44 +151,66 @@
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
-                            <div class="sidebar-menu-icon">📈</div>
-                            Reportes
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <span>Reportes</span>
                         </a>
                     </li>
                 </ul>
             </div>
             
-            <div class="sidebar-divider"></div>
-            
             <div class="sidebar-section">
+                <div class="sidebar-section-title">Cuenta</div>
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
-                        <a href="configuracion.html" class="sidebar-menu-link active">
-                            <div class="sidebar-menu-icon">⚙️</div>
-                            Configuración
+                        <a href="perfil.html" class="sidebar-menu-link" data-nav="perfil.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span>Mi Perfil</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item active">
+                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                </svg>
+                            </div>
+                            <span>Configuración</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="login.html" class="sidebar-menu-link" data-nav="login.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                            </div>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </nav>
-        
-        <div class="sidebar-footer">
-            <button class="sidebar-logout" data-logout>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    <polyline points="16,17 21,12 16,7"></polyline>
-                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                </svg>
-                Cerrar Sesión
-            </button>
-        </div>
     </aside>
     
     <main class="main-content">
         <header class="dashboard-header">
-            <div>
-                <h1 class="dashboard-title">Configuración del Sistema</h1>
-                <p class="dashboard-subtitle">Personaliza tu experiencia y configuración</p>
+            <div class="welcome-section">
+                <h1 class="dashboard-title">Configuración</h1>
+                <p class="dashboard-subtitle">Personaliza tu experiencia y configuración del sistema</p>
             </div>
             
             <div class="dashboard-actions">
@@ -156,303 +218,310 @@
                     <div class="avatar avatar-md">
                         <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
                     </div>
-                    <span data-user-name>Usuario</span>
                 </div>
             </div>
         </header>
         
         <div class="dashboard-content">
-            <div class="config-sections">
-                <div class="config-section glow-effect">
-                    <div class="section-header">
-                        <div class="section-icon">👤</div>
-                        <div class="section-info">
-                            <h3 class="section-title">Perfil de Usuario</h3>
-                            <p class="section-description">Gestiona tu información personal</p>
+            <!-- Configuración General -->
+            <div class="config-section">
+                <div class="config-header">
+                    <h3 class="config-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                        Configuración General
+                    </h3>
+                </div>
+                
+                <div class="config-content">
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Nombre del Estudio</h4>
+                            <p class="config-item-description">Personaliza el nombre que aparece en el sistema</p>
+                        </div>
+                        <div class="config-control">
+                            <input type="text" class="form-control" value="FotoStudio Pro" placeholder="Nombre del estudio">
                         </div>
                     </div>
-                    <div class="section-content">
-                        <div class="profile-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" value="Usuario" placeholder="Tu nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" value="usuario@fotostudio.com" placeholder="tu@email.com">
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label">Teléfono</label>
-                                    <input type="tel" class="form-control" placeholder="+51 999 999 999">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Rol</label>
-                                    <select class="form-control">
-                                        <option value="admin">Administrador</option>
-                                        <option value="editor">Editor</option>
-                                        <option value="viewer">Visualizador</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">Avatar</label>
-                                <div class="avatar-selector">
-                                    <div class="current-avatar">
-                                        <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%237033ff'/%3E%3Ctext x='30' y='35' text-anchor='middle' fill='white' font-size='20' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar actual">
-                                    </div>
-                                    <div class="avatar-options">
-                                        <button class="avatar-option" data-avatar="assets/avatar1.png">
-                                            <img src="assets/avatar1.png" alt="Avatar 1">
-                                        </button>
-                                        <button class="avatar-option" data-avatar="assets/avatar2.png">
-                                            <img src="assets/avatar2.png" alt="Avatar 2">
-                                        </button>
-                                        <button class="avatar-option" data-avatar="assets/avatar3.png">
-                                            <img src="assets/avatar3.png" alt="Avatar 3">
-                                        </button>
-                                        <button class="avatar-option" data-avatar="assets/avatar4.png">
-                                            <img src="assets/avatar4.png" alt="Avatar 4">
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <button class="btn btn-primary">Guardar Cambios</button>
+                    
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Logo del Estudio</h4>
+                            <p class="config-item-description">Sube tu logo personalizado</p>
+                        </div>
+                        <div class="config-control">
+                            <button class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                                    <circle cx="12" cy="13" r="3"></circle>
+                                </svg>
+                                Subir Logo
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Zona Horaria</h4>
+                            <p class="config-item-description">Configura la zona horaria del sistema</p>
+                        </div>
+                        <div class="config-control">
+                            <select class="form-control">
+                                <option value="UTC-5" selected>UTC-5 (Colombia)</option>
+                                <option value="UTC-6">UTC-6 (México)</option>
+                                <option value="UTC-3">UTC-3 (Argentina)</option>
+                                <option value="UTC+0">UTC+0 (España)</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-                
-                <div class="config-section glow-effect">
-                    <div class="section-header">
-                        <div class="section-icon">🏢</div>
-                        <div class="section-info">
-                            <h3 class="section-title">Información del Estudio</h3>
-                            <p class="section-description">Configura los datos de tu negocio</p>
-                        </div>
-                    </div>
-                    <div class="section-content">
-                        <div class="studio-form">
-                            <div class="form-group">
-                                <label class="form-label">Nombre del Estudio</label>
-                                <input type="text" class="form-control" value="FotoStudio" placeholder="Nombre de tu estudio">
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label">Dirección</label>
-                                    <input type="text" class="form-control" placeholder="Dirección completa">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Teléfono</label>
-                                    <input type="tel" class="form-control" placeholder="+51 999 999 999">
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="info@fotostudio.com">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Sitio Web</label>
-                                    <input type="url" class="form-control" placeholder="https://fotostudio.com">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">Descripción</label>
-                                <textarea class="form-control" rows="3" placeholder="Descripción de tu estudio..."></textarea>
-                            </div>
-                            
-                            <button class="btn btn-primary">Actualizar Información</button>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Configuración de Notificaciones -->
+            <div class="config-section">
+                <div class="config-header">
+                    <h3 class="config-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        Notificaciones
+                    </h3>
                 </div>
                 
-                <div class="config-section glow-effect">
-                    <div class="section-header">
-                        <div class="section-icon">⚙️</div>
-                        <div class="section-info">
-                            <h3 class="section-title">Configuración General</h3>
-                            <p class="section-description">Ajustes del sistema y preferencias</p>
+                <div class="config-content">
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Notificaciones por Email</h4>
+                            <p class="config-item-description">Recibe notificaciones importantes por correo electrónico</p>
+                        </div>
+                        <div class="config-control">
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="emailNotifications" class="toggle-input" checked>
+                                <label for="emailNotifications" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="section-content">
-                        <div class="settings-form">
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h4 class="setting-title">Notificaciones por Email</h4>
-                                    <p class="setting-description">Recibir notificaciones sobre nuevos pedidos y citas</p>
-                                </div>
-                                <div class="setting-control">
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
+                    
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Recordatorios de Citas</h4>
+                            <p class="config-item-description">Recibe recordatorios antes de las citas programadas</p>
+                        </div>
+                        <div class="config-control">
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="appointmentReminders" class="toggle-input" checked>
+                                <label for="appointmentReminders" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
                             </div>
-                            
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h4 class="setting-title">Recordatorios de Citas</h4>
-                                    <p class="setting-description">Enviar recordatorios automáticos a clientes</p>
-                                </div>
-                                <div class="setting-control">
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h4 class="setting-title">Modo Oscuro</h4>
-                                    <p class="setting-description">Activar tema oscuro para la interfaz</p>
-                                </div>
-                                <div class="setting-control">
-                                    <label class="toggle-switch">
-                                        <input type="checkbox">
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h4 class="setting-title">Idioma</h4>
-                                    <p class="setting-description">Selecciona el idioma de la interfaz</p>
-                                </div>
-                                <div class="setting-control">
-                                    <select class="form-control">
-                                        <option value="es">Español</option>
-                                        <option value="en">English</option>
-                                        <option value="pt">Português</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h4 class="setting-title">Zona Horaria</h4>
-                                    <p class="setting-description">Configura tu zona horaria local</p>
-                                </div>
-                                <div class="setting-control">
-                                    <select class="form-control">
-                                        <option value="America/Lima">Lima (GMT-5)</option>
-                                        <option value="America/New_York">Nueva York (GMT-5)</option>
-                                        <option value="Europe/Madrid">Madrid (GMT+1)</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <button class="btn btn-primary">Guardar Configuración</button>
                         </div>
                     </div>
-                </div>
-                
-                <div class="config-section glow-effect">
-                    <div class="section-header">
-                        <div class="section-icon">🔒</div>
-                        <div class="section-info">
-                            <h3 class="section-title">Seguridad</h3>
-                            <p class="section-description">Gestiona la seguridad de tu cuenta</p>
+                    
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Notificaciones de Pedidos</h4>
+                            <p class="config-item-description">Recibe notificaciones cuando se crean nuevos pedidos</p>
                         </div>
-                    </div>
-                    <div class="section-content">
-                        <div class="security-form">
-                            <div class="form-group">
-                                <label class="form-label">Contraseña Actual</label>
-                                <input type="password" class="form-control" placeholder="Tu contraseña actual">
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label">Nueva Contraseña</label>
-                                    <input type="password" class="form-control" placeholder="Nueva contraseña">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Confirmar Contraseña</label>
-                                    <input type="password" class="form-control" placeholder="Confirmar nueva contraseña">
-                                </div>
-                            </div>
-                            
-                            <div class="security-options">
-                                <div class="setting-item">
-                                    <div class="setting-info">
-                                        <h4 class="setting-title">Autenticación de Dos Factores</h4>
-                                        <p class="setting-description">Agregar una capa extra de seguridad</p>
-                                    </div>
-                                    <div class="setting-control">
-                                        <label class="toggle-switch">
-                                            <input type="checkbox">
-                                            <span class="toggle-slider"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="setting-item">
-                                    <div class="setting-info">
-                                        <h4 class="setting-title">Sesiones Activas</h4>
-                                        <p class="setting-description">Ver y gestionar sesiones activas</p>
-                                    </div>
-                                    <div class="setting-control">
-                                        <button class="btn btn-secondary btn-sm">Ver Sesiones</button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <button class="btn btn-primary">Cambiar Contraseña</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="config-section glow-effect">
-                    <div class="section-header">
-                        <div class="section-icon">📊</div>
-                        <div class="section-info">
-                            <h3 class="section-title">Respaldo y Datos</h3>
-                            <p class="section-description">Gestiona tus datos y respaldos</p>
-                        </div>
-                    </div>
-                    <div class="section-content">
-                        <div class="backup-actions">
-                            <div class="backup-item">
-                                <div class="backup-info">
-                                    <h4 class="backup-title">Exportar Datos</h4>
-                                    <p class="backup-description">Descargar todos tus datos en formato CSV</p>
-                                </div>
-                                <button class="btn btn-secondary">Exportar</button>
-                            </div>
-                            
-                            <div class="backup-item">
-                                <div class="backup-info">
-                                    <h4 class="backup-title">Respaldo Completo</h4>
-                                    <p class="backup-description">Crear un respaldo completo del sistema</p>
-                                </div>
-                                <button class="btn btn-secondary">Crear Respaldo</button>
-                            </div>
-                            
-                            <div class="backup-item">
-                                <div class="backup-info">
-                                    <h4 class="backup-title">Restaurar Datos</h4>
-                                    <p class="backup-description">Restaurar desde un respaldo anterior</p>
-                                </div>
-                                <button class="btn btn-warning">Restaurar</button>
+                        <div class="config-control">
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="orderNotifications" class="toggle-input" checked>
+                                <label for="orderNotifications" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Configuración de Seguridad -->
+            <div class="config-section">
+                <div class="config-header">
+                    <h3 class="config-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Seguridad
+                    </h3>
+                </div>
+                
+                <div class="config-content">
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Autenticación de Dos Factores</h4>
+                            <p class="config-item-description">Añade una capa extra de seguridad a tu cuenta</p>
+                        </div>
+                        <div class="config-control">
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="twoFactorAuth" class="toggle-input">
+                                <label for="twoFactorAuth" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Sesiones Activas</h4>
+                            <p class="config-item-description">Gestiona las sesiones activas en otros dispositivos</p>
+                        </div>
+                        <div class="config-control">
+                            <button class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"></path>
+                                    <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                                    <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                                    <path d="M13 12h3a2 2 0 0 1 2 2v1"></path>
+                                    <path d="M11 12H8a2 2 0 0 0-2 2v1"></path>
+                                </svg>
+                                Ver Sesiones
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Cambiar Contraseña</h4>
+                            <p class="config-item-description">Actualiza tu contraseña de acceso</p>
+                        </div>
+                        <div class="config-control">
+                            <button class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <circle cx="12" cy="16" r="1"></circle>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                Cambiar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Configuración de Backup -->
+            <div class="config-section">
+                <div class="config-header">
+                    <h3 class="config-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        Respaldo y Datos
+                    </h3>
+                </div>
+                
+                <div class="config-content">
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Respaldo Automático</h4>
+                            <p class="config-item-description">Configura respaldos automáticos de tus datos</p>
+                        </div>
+                        <div class="config-control">
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="autoBackup" class="toggle-input" checked>
+                                <label for="autoBackup" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Frecuencia de Respaldo</h4>
+                            <p class="config-item-description">Selecciona cada cuánto tiempo hacer respaldos</p>
+                        </div>
+                        <div class="config-control">
+                            <select class="form-control">
+                                <option value="daily" selected>Diario</option>
+                                <option value="weekly">Semanal</option>
+                                <option value="monthly">Mensual</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-info">
+                            <h4 class="config-item-title">Exportar Datos</h4>
+                            <p class="config-item-description">Descarga una copia de todos tus datos</p>
+                        </div>
+                        <div class="config-control">
+                            <button class="btn btn-primary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="config-actions">
+                <button class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                    </svg>
+                    Restablecer
+                </button>
+                <button class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                        <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                        <polyline points="7 3 7 8 15 8"></polyline>
+                    </svg>
+                    Guardar Cambios
+                </button>
+            </div>
         </div>
     </main>
     
     <script src="js/global.js"></script>
+    <script src="js/glowing-effect.js"></script>
+    <script src="js/bubbles-effect.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar FotoStudio global
+            window.FotoStudio.init();
+            
+            // Actualizar avatar del usuario
+            const userAvatarElements = document.querySelectorAll('[data-user-avatar]');
+            userAvatarElements.forEach(element => {
+                if (window.FotoStudio.currentAvatar) {
+                    element.src = window.FotoStudio.currentAvatar;
+                }
+            });
+            
+            // Inicializar efecto de burbujas
+            const bubbles = document.querySelectorAll('.bubble');
+            bubbles.forEach(bubble => {
+                const size = Math.random() * 100 + 50;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${posX}%`;
+                bubble.style.top = `${posY}%`;
+                bubble.style.animationDelay = `${delay}s`;
+                bubble.style.animationDuration = `${duration}s`;
+            });
+        });
+    </script>
     <script src="js/components.js"></script>
     <script src="js/configuracion.js"></script>
 </body>

@@ -1,233 +1,129 @@
-// Funcionalidad específica para la página de configuración
-
+// FotoStudio - Configuración JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    initializeConfiguracion();
+    // Inicializar FotoStudio global
+    window.FotoStudio.init();
+    
+    // Funciones específicas de configuración
+    initializeConfiguration();
 });
 
-function initializeConfiguracion() {
-    // Inicializar formularios
-    initializeForms();
+function initializeConfiguration() {
+    // Inicializar configuración
+    initializeSettings();
     
-    // Inicializar botones
-    initializeButtons();
+    // Configurar eventos
+    setupEventListeners();
     
     // Cargar configuración actual
     loadCurrentSettings();
 }
 
-function initializeForms() {
-    const forms = document.querySelectorAll('.config-form');
-    forms.forEach(form => {
-        form.addEventListener('submit', handleFormSubmit);
+function initializeSettings() {
+    // Inicializar toggles y controles
+    const toggles = document.querySelectorAll('.toggle-switch input');
+    toggles.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+            saveSetting(this.name, this.checked);
+        });
+    });
+    
+    // Inicializar selectores
+    const selects = document.querySelectorAll('.form-control');
+    selects.forEach(select => {
+        select.addEventListener('change', function() {
+            saveSetting(this.name, this.value);
+        });
     });
 }
 
-function initializeButtons() {
+function setupEventListeners() {
+    // Event listeners para configuración
+    const avatarOptions = document.querySelectorAll('.avatar-option');
+    avatarOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const avatar = this.dataset.avatar;
+            selectAvatar(avatar);
+        });
+    });
+    
     // Botones de guardar
-    const saveButtons = document.querySelectorAll('.btn-save');
+    const saveButtons = document.querySelectorAll('.btn-primary');
     saveButtons.forEach(button => {
-        button.addEventListener('click', handleSave);
+        button.addEventListener('click', function() {
+            saveConfiguration();
+        });
+    });
+}
+
+function selectAvatar(avatarPath) {
+    // Seleccionar nuevo avatar
+    const avatarElements = document.querySelectorAll('[data-user-avatar]');
+    avatarElements.forEach(element => {
+        element.src = avatarPath;
     });
     
-    // Botones de reset
-    const resetButtons = document.querySelectorAll('.btn-reset');
-    resetButtons.forEach(button => {
-        button.addEventListener('click', handleReset);
+    // Guardar selección
+    window.FotoStudio.currentAvatar = avatarPath;
+    localStorage.setItem('userAvatar', avatarPath);
+}
+
+function saveSetting(name, value) {
+    // Guardar configuración individual
+    localStorage.setItem(name, value);
+    console.log(`Configuración guardada: ${name} = ${value}`);
+}
+
+function saveConfiguration() {
+    // Guardar toda la configuración
+    const formData = new FormData();
+    
+    // Recopilar datos de formularios
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        const formDataObj = new FormData(form);
+        for (let [key, value] of formDataObj.entries()) {
+            formData.append(key, value);
+        }
     });
     
-    // Botones de prueba
-    const testButtons = document.querySelectorAll('.btn-test');
-    testButtons.forEach(button => {
-        button.addEventListener('click', handleTest);
-    });
+    // Simular guardado
+    console.log('Configuración guardada exitosamente');
+    showNotification('Configuración guardada', 'success');
 }
 
 function loadCurrentSettings() {
-    // Cargar configuración de perfil
-    loadProfileSettings();
+    // Cargar configuración actual
+    const savedAvatar = localStorage.getItem('userAvatar');
+    if (savedAvatar) {
+        selectAvatar(savedAvatar);
+    }
     
-    // Cargar configuración de notificaciones
-    loadNotificationSettings();
-    
-    // Cargar configuración de sistema
-    loadSystemSettings();
-}
-
-function loadProfileSettings() {
-    const profileForm = document.querySelector('#profileForm');
-    if (!profileForm) return;
-    
-    // Simular datos de perfil
-    const profileData = {
-        name: 'FotoStudio',
-        email: 'info@fotostudio.com',
-        phone: '+1 234 567 8900',
-        address: '123 Calle Principal, Ciudad',
-        website: 'www.fotostudio.com'
-    };
-    
-    // Llenar formulario
-    Object.keys(profileData).forEach(key => {
-        const input = profileForm.querySelector(`[name="${key}"]`);
-        if (input) {
-            input.value = profileData[key];
-        }
-    });
-}
-
-function loadNotificationSettings() {
-    const notificationForm = document.querySelector('#notificationForm');
-    if (!notificationForm) return;
-    
-    // Simular configuración de notificaciones
-    const notificationData = {
-        emailNotifications: true,
-        smsNotifications: false,
-        pushNotifications: true,
-        reminderTime: '24'
-    };
-    
-    // Llenar formulario
-    Object.keys(notificationData).forEach(key => {
-        const input = notificationForm.querySelector(`[name="${key}"]`);
-        if (input) {
-            if (input.type === 'checkbox') {
-                input.checked = notificationData[key];
-            } else {
-                input.value = notificationData[key];
+    // Cargar otras configuraciones
+    const settings = ['emailNotifications', 'appointmentReminders', 'darkMode', 'language', 'timezone'];
+    settings.forEach(setting => {
+        const value = localStorage.getItem(setting);
+        if (value !== null) {
+            const element = document.querySelector(`[name="${setting}"]`);
+            if (element) {
+                if (element.type === 'checkbox') {
+                    element.checked = value === 'true';
+                } else {
+                    element.value = value;
+                }
             }
         }
     });
 }
 
-function loadSystemSettings() {
-    const systemForm = document.querySelector('#systemForm');
-    if (!systemForm) return;
+function showNotification(message, type = 'info') {
+    // Mostrar notificación
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
     
-    // Simular configuración del sistema
-    const systemData = {
-        timezone: 'America/Lima',
-        language: 'es',
-        dateFormat: 'DD/MM/YYYY',
-        currency: 'PEN',
-        backupFrequency: 'daily'
-    };
+    document.body.appendChild(notification);
     
-    // Llenar formulario
-    Object.keys(systemData).forEach(key => {
-        const input = systemForm.querySelector(`[name="${key}"]`);
-        if (input) {
-            input.value = systemData[key];
-        }
-    });
-}
-
-function handleFormSubmit(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    
-    // Validar formulario
-    if (validateForm(form, data)) {
-        saveSettings(form.id, data);
-    }
-}
-
-function validateForm(form, data) {
-    const requiredFields = form.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-        if (!data[field.name]) {
-            field.classList.add('is-invalid');
-            isValid = false;
-        } else {
-            field.classList.remove('is-invalid');
-        }
-    });
-    
-    return isValid;
-}
-
-function handleSave(e) {
-    const button = e.target;
-    const form = button.closest('.config-form');
-    
-    if (form) {
-        form.dispatchEvent(new Event('submit'));
-    }
-}
-
-function handleReset(e) {
-    const button = e.target;
-    const form = button.closest('.config-form');
-    
-    if (form) {
-        form.reset();
-        loadCurrentSettings();
-        
-        if (window.FotoStudio && window.FotoStudio.showNotification) {
-            window.FotoStudio.showNotification('Configuración restablecida', 'info');
-        }
-    }
-}
-
-function handleTest(e) {
-    const button = e.target;
-    const testType = button.dataset.test;
-    
-    switch(testType) {
-        case 'email':
-            testEmailConnection();
-            break;
-        case 'sms':
-            testSMSConnection();
-            break;
-        case 'backup':
-            testBackup();
-            break;
-    }
-}
-
-function testEmailConnection() {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification('Probando conexión de email...', 'info');
-        
-        setTimeout(() => {
-            window.FotoStudio.showNotification('Conexión de email exitosa', 'success');
-        }, 2000);
-    }
-}
-
-function testSMSConnection() {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification('Probando conexión de SMS...', 'info');
-        
-        setTimeout(() => {
-            window.FotoStudio.showNotification('Conexión de SMS exitosa', 'success');
-        }, 2000);
-    }
-}
-
-function testBackup() {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification('Probando respaldo...', 'info');
-        
-        setTimeout(() => {
-            window.FotoStudio.showNotification('Respaldo exitoso', 'success');
-        }, 3000);
-    }
-}
-
-function saveSettings(formId, data) {
-    // Simular guardado
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification('Guardando configuración...', 'info');
-        
-        setTimeout(() => {
-            window.FotoStudio.showNotification('Configuración guardada exitosamente', 'success');
-        }, 1000);
-    }
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
 }

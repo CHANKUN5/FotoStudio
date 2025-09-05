@@ -64,8 +64,33 @@ window.FotoStudio = {
     },
     
     getRandomAvatar() {
+        // Si ya existe un avatar guardado en localStorage, lo devolvemos
+        const savedAvatar = localStorage.getItem('fotostudio_avatar');
+        if (savedAvatar && this.avatars.includes(savedAvatar)) {
+            return savedAvatar;
+        }
+        
+        // Generamos un avatar basado en el email del usuario para que sea consistente
+        if (this.currentUser && this.currentUser.email) {
+            // Usamos el hash simple del email para determinar el avatar
+            const emailHash = this.simpleHash(this.currentUser.email);
+            const avatarIndex = emailHash % this.avatars.length;
+            return this.avatars[avatarIndex];
+        }
+        
+        // Si no hay usuario, generamos uno aleatorio
         const randomIndex = Math.floor(Math.random() * this.avatars.length);
         return this.avatars[randomIndex];
+    },
+    
+    simpleHash(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convertir a entero de 32 bits
+        }
+        return Math.abs(hash);
     },
     
     navigate(page) {

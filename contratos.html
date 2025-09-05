@@ -8,22 +8,23 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/contratos.css">
+    <link rel="stylesheet" href="styles/bubbles.css">
 </head>
 <body>
     <div class="sidebar-overlay"></div>
     
-    <button type="button" class="sidebar-toggle">
-        Toggle sidebar
+    <button type="button" class="sidebar-toggle" title="Abrir/Cerrar Menú">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
+        <span class="sr-only">Abrir/Cerrar Menú</span>
     </button>
     
     <aside class="sidebar">
         <div class="sidebar-header">
-            <a href="dashboard.html" class="sidebar-logo">
+            <a href="dashboard.html" class="sidebar-logo" data-nav="dashboard.html">
                 <span class="sidebar-logo-text">FotoStudio</span>
             </a>
         </div>
@@ -44,8 +45,51 @@
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
-                            <div class="sidebar-menu-icon">📊</div>
-                            Dashboard
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </div>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                            </div>
+                            <span>Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span>Clientes</span>
                         </a>
                     </li>
                 </ul>
@@ -55,52 +99,39 @@
                 <div class="sidebar-section-title">Gestión</div>
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
-                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
-                            <div class="sidebar-menu-icon">📋</div>
-                            Pedidos
-                            <span class="sidebar-badge">12</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
-                            <div class="sidebar-menu-icon">👥</div>
-                            Clientes
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
                         <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
-                            <div class="sidebar-menu-icon">📦</div>
-                            Inventario
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <span>Inventario</span>
                         </a>
                     </li>
                     <li class="sidebar-menu-item">
                         <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
-                            <div class="sidebar-menu-icon">🏭</div>
-                            Producción
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <span>Producción</span>
                         </a>
                     </li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Comercial</div>
-                <ul class="sidebar-menu">
-                    <li class="sidebar-menu-item">
-                        <a href="contratos.html" class="sidebar-menu-link active">
-                            <div class="sidebar-menu-icon">📄</div>
-                            Contratos
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
-                            <div class="sidebar-menu-icon">✅</div>
-                            Productos Terminados
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
-                            <div class="sidebar-menu-icon">📅</div>
-                            Agenda
+                    <li class="sidebar-menu-item active">
+                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <span>Contratos</span>
                         </a>
                     </li>
                 </ul>
@@ -111,330 +142,376 @@
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
-                            <div class="sidebar-menu-icon">📈</div>
-                            Reportes
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <span>Reportes</span>
                         </a>
                     </li>
                 </ul>
             </div>
             
-            <div class="sidebar-divider"></div>
-            
             <div class="sidebar-section">
+                <div class="sidebar-section-title">Cuenta</div>
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
+                        <a href="perfil.html" class="sidebar-menu-link" data-nav="perfil.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span>Mi Perfil</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
                         <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
-                            <div class="sidebar-menu-icon">⚙️</div>
-                            Configuración
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                </svg>
+                            </div>
+                            <span>Configuración</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="login.html" class="sidebar-menu-link" data-nav="login.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                            </div>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </nav>
-        
-        <div class="sidebar-footer">
-            <button class="sidebar-logout" data-logout>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    <polyline points="16,17 21,12 16,7"></polyline>
-                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                </svg>
-                Cerrar Sesión
-            </button>
-        </div>
     </aside>
     
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
     <main class="main-content">
-        <header class="dashboard-header">
-            <div>
-                <h1 class="dashboard-title">Gestión de Contratos</h1>
-                <p class="dashboard-subtitle">Administra contratos y acuerdos comerciales</p>
-            </div>
-            
-            <div class="dashboard-actions">
-                <div class="dashboard-search">
-                    <svg class="dashboard-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="M21 21l-4.35-4.35"></path>
-                    </svg>
-                    <input type="text" placeholder="Buscar contratos...">
-                </div>
-                
-                <div class="dashboard-user">
-                    <div class="avatar avatar-md">
-                        <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
+        <div class="contratos-container">
+            <div class="contratos-header">
+                <h1 class="contratos-title">Contratos</h1>
+                <div class="contratos-actions">
+                    <div class="search-container">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" placeholder="Buscar contratos..." class="search-input">
                     </div>
-                    <span data-user-name>Usuario</span>
-                </div>
-            </div>
-        </header>
-        
-        <div class="dashboard-content">
-            <div class="contratos-stats">
-                <div class="stat-card glow-effect">
-                    <div class="stat-icon">📄</div>
-                    <div class="stat-content">
-                        <div class="stat-value">28</div>
-                        <div class="stat-label">Contratos Activos</div>
-                        <div class="stat-trend up">+5 este mes</div>
-                    </div>
-                </div>
-                
-                <div class="stat-card glow-effect">
-                    <div class="stat-icon">⏰</div>
-                    <div class="stat-content">
-                        <div class="stat-value">3</div>
-                        <div class="stat-label">Por Vencer</div>
-                        <div class="stat-trend warning">⚠️ Requiere atención</div>
-                    </div>
-                </div>
-                
-                <div class="stat-card glow-effect">
-                    <div class="stat-icon">✅</div>
-                    <div class="stat-content">
-                        <div class="stat-value">156</div>
-                        <div class="stat-label">Completados</div>
-                        <div class="stat-trend up">+12 este mes</div>
-                    </div>
-                </div>
-                
-                <div class="stat-card glow-effect">
-                    <div class="stat-icon">💰</div>
-                    <div class="stat-content">
-                        <div class="stat-value">S/ 45,200</div>
-                        <div class="stat-label">Valor Total</div>
-                        <div class="stat-trend up">+18% incremento</div>
-                    </div>
+                    <button class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Nuevo Contrato
+                    </button>
                 </div>
             </div>
             
             <div class="contratos-filters">
                 <div class="filter-group">
                     <label>Estado:</label>
-                    <select class="filter-select">
+                    <select class="form-select">
                         <option value="">Todos</option>
                         <option value="activo">Activo</option>
                         <option value="pendiente">Pendiente</option>
-                        <option value="vencido">Vencido</option>
-                        <option value="completado">Completado</option>
+                        <option value="finalizado">Finalizado</option>
+                        <option value="cancelado">Cancelado</option>
                     </select>
                 </div>
-                
                 <div class="filter-group">
                     <label>Tipo:</label>
-                    <select class="filter-select">
+                    <select class="form-select">
                         <option value="">Todos</option>
-                        <option value="fotografia">Fotografía</option>
                         <option value="evento">Evento</option>
+                        <option value="sesion">Sesión</option>
                         <option value="comercial">Comercial</option>
-                        <option value="personal">Personal</option>
                     </select>
                 </div>
-                
-                <button class="btn btn-primary" onclick="openNewContractModal()">
+                <div class="filter-group">
+                    <label>Fecha:</label>
+                    <input type="date" class="form-select">
+                </div>
+                <button class="btn btn-outline">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <line x1="21" y1="4" x2="14" y2="4"></line>
+                        <line x1="10" y1="4" x2="3" y2="4"></line>
+                        <line x1="21" y1="12" x2="12" y2="12"></line>
+                        <line x1="8" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="20" x2="16" y2="20"></line>
+                        <line x1="12" y1="20" x2="3" y2="20"></line>
+                        <line x1="14" y1="2" x2="14" y2="6"></line>
+                        <line x1="8" y1="10" x2="8" y2="14"></line>
+                        <line x1="16" y1="18" x2="16" y2="22"></line>
                     </svg>
-                    Nuevo Contrato
+                    Filtros
                 </button>
             </div>
             
-            <div class="contratos-table-container">
-                <div class="table-header">
-                    <h3 class="table-title">Lista de Contratos</h3>
-                    <div class="table-actions">
-                        <button class="btn btn-secondary btn-sm">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7,10 12,15 17,10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            Exportar
-                        </button>
+            <div class="contratos-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">45</div>
+                        <div class="stat-label">Total Contratos</div>
                     </div>
                 </div>
-                
-                <table class="contratos-table">
+                <div class="stat-card success">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">28</div>
+                        <div class="stat-label">Activos</div>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Pendientes</div>
+                    </div>
+                </div>
+                <div class="stat-card info">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">$24,850</div>
+                        <div class="stat-label">Valor Total</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table class="data-table">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Cliente</th>
                             <th>Tipo</th>
+                            <th>Fecha</th>
                             <th>Valor</th>
-                            <th>Fecha Inicio</th>
-                            <th>Fecha Fin</th>
                             <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="contract-id">#CONT-001</span></td>
-                            <td>
-                                <div class="client-info">
-                                    <div class="client-avatar">MG</div>
-                                    <div class="client-details">
-                                        <div class="client-name">María García</div>
-                                        <div class="client-email">maria@email.com</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><span class="contract-type type-fotografia">Fotografía</span></td>
-                            <td><span class="contract-value">S/ 1,200</span></td>
-                            <td><span class="date-cell">15 Dic 2024</span></td>
-                            <td><span class="date-cell">15 Ene 2025</span></td>
-                            <td><span class="status-badge status-activo">Activo</span></td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="action-btn view" title="Ver contrato">👁️</button>
-                                    <button class="action-btn edit" title="Editar">✏️</button>
-                                    <button class="action-btn download" title="Descargar">📥</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><span class="contract-id">#CONT-002</span></td>
-                            <td>
-                                <div class="client-info">
-                                    <div class="client-avatar">JP</div>
-                                    <div class="client-details">
-                                        <div class="client-name">Juan Pérez</div>
-                                        <div class="client-email">juan@email.com</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><span class="contract-type type-evento">Evento</span></td>
-                            <td><span class="contract-value">S/ 2,500</span></td>
-                            <td><span class="date-cell">20 Dic 2024</span></td>
-                            <td><span class="date-cell">20 Ene 2025</span></td>
-                            <td><span class="status-badge status-pendiente">Pendiente</span></td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="action-btn view" title="Ver contrato">👁️</button>
-                                    <button class="action-btn edit" title="Editar">✏️</button>
-                                    <button class="action-btn download" title="Descargar">📥</button>
-                                </div>
+                            <td>CON-001</td>
+                            <td>María González</td>
+                            <td>Evento - Boda</td>
+                            <td>15/06/2023</td>
+                            <td>$1,200.00</td>
+                            <td><span class="badge success">Activo</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Descargar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
                             </td>
                         </tr>
                         <tr>
-                            <td><span class="contract-id">#CONT-003</span></td>
-                            <td>
-                                <div class="client-info">
-                                    <div class="client-avatar">AL</div>
-                                    <div class="client-details">
-                                        <div class="client-name">Ana López</div>
-                                        <div class="client-email">ana@email.com</div>
-                                    </div>
-                                </div>
+                            <td>CON-002</td>
+                            <td>Carlos Rodríguez</td>
+                            <td>Sesión - Familiar</td>
+                            <td>22/06/2023</td>
+                            <td>$350.00</td>
+                            <td><span class="badge warning">Pendiente</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Descargar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
                             </td>
-                            <td><span class="contract-type type-comercial">Comercial</span></td>
-                            <td><span class="contract-value">S/ 3,800</span></td>
-                            <td><span class="date-cell">10 Dic 2024</span></td>
-                            <td><span class="date-cell">10 Mar 2025</span></td>
-                            <td><span class="status-badge status-activo">Activo</span></td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="action-btn view" title="Ver contrato">👁️</button>
-                                    <button class="action-btn edit" title="Editar">✏️</button>
-                                    <button class="action-btn download" title="Descargar">📥</button>
-                                </div>
+                        </tr>
+                        <tr>
+                            <td>CON-003</td>
+                            <td>Empresa XYZ</td>
+                            <td>Comercial - Productos</td>
+                            <td>05/07/2023</td>
+                            <td>$2,500.00</td>
+                            <td><span class="badge success">Activo</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Descargar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CON-004</td>
+                            <td>Ana Martínez</td>
+                            <td>Sesión - Retrato</td>
+                            <td>10/07/2023</td>
+                            <td>$180.00</td>
+                            <td><span class="badge danger">Cancelado</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Descargar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CON-005</td>
+                            <td>Pedro Sánchez</td>
+                            <td>Evento - Graduación</td>
+                            <td>18/07/2023</td>
+                            <td>$850.00</td>
+                            <td><span class="badge info">Finalizado</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Descargar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                
-                <div class="pagination">
-                    <span class="pagination-info">Mostrando 1-10 de 28 contratos</span>
-                    <div class="pagination-buttons">
-                        <button class="pagination-btn" disabled>←</button>
-                        <button class="pagination-btn active">1</button>
-                        <button class="pagination-btn">2</button>
-                        <button class="pagination-btn">3</button>
-                        <button class="pagination-btn">→</button>
-                    </div>
+            </div>
+            
+            <div class="pagination">
+                <button class="btn btn-icon" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="pagination-pages">
+                    <button class="pagination-page active">1</button>
+                    <button class="pagination-page">2</button>
+                    <button class="pagination-page">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-page">5</button>
                 </div>
+                <button class="btn btn-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
         </div>
     </main>
     
-    <div class="modal-overlay" id="newContractModal">
-        <div class="modal modal-lg">
-            <div class="modal-header">
-                <h3 class="modal-title">Nuevo Contrato</h3>
-            </div>
-            <div class="modal-body">
-                <form id="newContractForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">Cliente</label>
-                            <select class="form-control" required>
-                                <option value="">Seleccionar cliente</option>
-                                <option value="1">María García</option>
-                                <option value="2">Juan Pérez</option>
-                                <option value="3">Ana López</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Tipo de Contrato</label>
-                            <select class="form-control" required>
-                                <option value="">Seleccionar tipo</option>
-                                <option value="fotografia">Fotografía</option>
-                                <option value="evento">Evento</option>
-                                <option value="comercial">Comercial</option>
-                                <option value="personal">Personal</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">Valor del Contrato (S/)</label>
-                            <input type="number" class="form-control" placeholder="0.00" step="0.01" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Estado</label>
-                            <select class="form-control" required>
-                                <option value="pendiente">Pendiente</option>
-                                <option value="activo">Activo</option>
-                                <option value="completado">Completado</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">Fecha de Inicio</label>
-                            <input type="date" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Fecha de Fin</label>
-                            <input type="date" class="form-control" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Descripción del Servicio</label>
-                        <textarea class="form-control" rows="4" placeholder="Detalles del contrato y servicios incluidos..."></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Términos y Condiciones</label>
-                        <textarea class="form-control" rows="3" placeholder="Términos específicos del contrato..."></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="closeNewContractModal()">Cancelar</button>
-                <button type="submit" class="btn btn-primary" form="newContractForm">Crear Contrato</button>
-            </div>
-        </div>
-    </div>
-    
     <script src="js/global.js"></script>
+    <script src="js/glowing-effect.js"></script>
+    <script src="js/bubbles-effect.js"></script>
     <script src="js/components.js"></script>
     <script src="js/contratos.js"></script>
 </body>

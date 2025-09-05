@@ -1,140 +1,153 @@
-// Funcionalidad específica para la página de producción
-
+// FotoStudio - Producción JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    initializeProduccion();
+    // Inicializar FotoStudio global
+    window.FotoStudio.init();
+    
+    // Funciones específicas de producción
+    initializeProduction();
 });
 
-function initializeProduccion() {
-    // Inicializar filtros
-    initializeFilters();
-    
-    // Inicializar elementos de flujo de trabajo
+function initializeProduction() {
+    // Inicializar producción
     initializeWorkflow();
     
-    // Inicializar acciones rápidas
-    initializeQuickActions();
+    // Configurar eventos
+    setupEventListeners();
     
-    // Inicializar actividad reciente
-    initializeRecentActivity();
-}
-
-function initializeFilters() {
-    const filterSelect = document.querySelector('.workflow-filters select');
-    
-    if (filterSelect) {
-        filterSelect.addEventListener('change', filterWorkflowItems);
-    }
+    // Cargar datos de producción
+    loadProductionData();
 }
 
 function initializeWorkflow() {
-    // Agregar funcionalidad a elementos de flujo de trabajo
+    // Inicializar flujo de trabajo
+    const filterSelect = document.querySelector('.filter-select');
+    if (filterSelect) {
+        filterSelect.addEventListener('change', filterWorkflow);
+    }
+}
+
+function setupEventListeners() {
+    // Event listeners para producción
     const workflowItems = document.querySelectorAll('.workflow-item');
     workflowItems.forEach(item => {
         const buttons = item.querySelectorAll('.btn');
         buttons.forEach(button => {
-            button.addEventListener('click', handleWorkflowAction);
+            button.addEventListener('click', function() {
+                const action = this.classList.contains('btn-primary') ? 'start' :
+                              this.classList.contains('btn-success') ? 'complete' : 'view';
+                const itemId = item.querySelector('.item-id').textContent;
+                
+                handleWorkflowAction(action, itemId);
+            });
+        });
+    });
+    
+    // Botones de acciones rápidas
+    const quickActions = document.querySelectorAll('.action-btn');
+    quickActions.forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.querySelector('span').textContent.toLowerCase();
+            handleQuickAction(action);
         });
     });
 }
 
-function initializeQuickActions() {
-    const actionButtons = document.querySelectorAll('.action-btn');
-    actionButtons.forEach(button => {
-        button.addEventListener('click', handleQuickAction);
-    });
-}
-
-function initializeRecentActivity() {
-    // Simular actualizaciones de actividad
-    setInterval(updateActivity, 10000);
-}
-
-function filterWorkflowItems() {
-    const filterSelect = document.querySelector('.workflow-filters select');
+function filterWorkflow() {
+    // Filtrar flujo de trabajo
+    const filterSelect = document.querySelector('.filter-select');
     const filter = filterSelect ? filterSelect.value : '';
     
     const workflowItems = document.querySelectorAll('.workflow-item');
-    
     workflowItems.forEach(item => {
-        const itemText = item.textContent.toLowerCase();
-        const showItem = !filter || itemText.includes(filter);
-        item.style.display = showItem ? 'block' : 'none';
+        const itemContent = item.querySelector('.item-content h5').textContent.toLowerCase();
+        
+        let show = true;
+        
+        if (filter && !itemContent.includes(filter)) {
+            show = false;
+        }
+        
+        item.style.display = show ? '' : 'none';
     });
 }
 
-function handleWorkflowAction(e) {
-    const button = e.target;
-    const action = button.textContent.trim();
-    const item = button.closest('.workflow-item');
-    const itemId = item.querySelector('.item-id').textContent;
-    
-    switch(action) {
-        case 'Iniciar':
+function handleWorkflowAction(action, itemId) {
+    // Manejar acciones del flujo de trabajo
+    switch (action) {
+        case 'start':
             startWork(itemId);
             break;
-        case 'Completar':
+        case 'complete':
             completeWork(itemId);
             break;
-        case 'Ver':
-            viewWorkDetails(itemId);
+        case 'view':
+            viewWork(itemId);
             break;
-    }
-}
-
-function handleQuickAction(e) {
-    const button = e.target.closest('.action-btn');
-    const actionText = button.querySelector('span').textContent;
-    
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification(`Iniciando: ${actionText}`, 'info');
     }
 }
 
 function startWork(itemId) {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification(`Iniciando trabajo ${itemId}`, 'success');
-    }
-    
-    // Simular cambio de estado
-    setTimeout(() => {
-        if (window.FotoStudio && window.FotoStudio.showNotification) {
-            window.FotoStudio.showNotification(`${itemId} iniciado`, 'success');
-        }
-    }, 1000);
+    // Iniciar trabajo
+    console.log('Iniciando trabajo:', itemId);
+    // Implementar lógica de inicio
 }
 
 function completeWork(itemId) {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification(`Completando trabajo ${itemId}`, 'success');
-    }
-    
-    // Simular cambio de estado
-    setTimeout(() => {
-        if (window.FotoStudio && window.FotoStudio.showNotification) {
-            window.FotoStudio.showNotification(`${itemId} completado`, 'success');
-        }
-    }, 1000);
+    // Completar trabajo
+    console.log('Completando trabajo:', itemId);
+    // Implementar lógica de finalización
 }
 
-function viewWorkDetails(itemId) {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification(`Viendo detalles de ${itemId}`, 'info');
+function viewWork(itemId) {
+    // Ver trabajo
+    console.log('Viendo trabajo:', itemId);
+    // Implementar lógica de visualización
+}
+
+function handleQuickAction(action) {
+    // Manejar acciones rápidas
+    switch (action) {
+        case 'nueva sesión':
+            createNewSession();
+            break;
+        case 'enmarcar':
+            startFraming();
+            break;
+        case 'imprimir':
+            startPrinting();
+            break;
+        case 'editar':
+            startEditing();
+            break;
     }
 }
 
-function updateActivity() {
-    const activityItems = document.querySelectorAll('.activity-item');
-    if (activityItems.length > 0) {
-        const randomIndex = Math.floor(Math.random() * activityItems.length);
-        const randomItem = activityItems[randomIndex];
-        
-        // Agregar efecto de actualización
-        randomItem.style.transform = 'scale(1.02)';
-        randomItem.style.background = 'rgba(112, 51, 255, 0.05)';
-        
-        setTimeout(() => {
-            randomItem.style.transform = '';
-            randomItem.style.background = '';
-        }, 1000);
-    }
+function createNewSession() {
+    // Crear nueva sesión
+    console.log('Creando nueva sesión');
+    // Implementar lógica de nueva sesión
+}
+
+function startFraming() {
+    // Iniciar enmarcado
+    console.log('Iniciando enmarcado');
+    // Implementar lógica de enmarcado
+}
+
+function startPrinting() {
+    // Iniciar impresión
+    console.log('Iniciando impresión');
+    // Implementar lógica de impresión
+}
+
+function startEditing() {
+    // Iniciar edición
+    console.log('Iniciando edición');
+    // Implementar lógica de edición
+}
+
+function loadProductionData() {
+    // Cargar datos de producción
+    console.log('Cargando datos de producción...');
+    // Implementar carga de datos
 }

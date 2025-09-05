@@ -8,16 +8,21 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/reportes.css">
+    <link rel="stylesheet" href="styles/bubbles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="sidebar-overlay"></div>
     
-    <button type="button" class="sidebar-toggle" title="Toggle sidebar">
+    <button type="button" class="sidebar-toggle" title="Abrir/Cerrar Menú">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
+        <span class="sr-only">Abrir/Cerrar Menú</span>
     </button>
     
     <aside class="sidebar">
@@ -43,8 +48,51 @@
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
-                            <div class="sidebar-menu-icon">📊</div>
-                            Dashboard
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </div>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                            </div>
+                            <span>Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span>Clientes</span>
                         </a>
                     </li>
                 </ul>
@@ -54,367 +102,243 @@
                 <div class="sidebar-section-title">Gestión</div>
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
-                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
-                            <div class="sidebar-menu-icon">📋</div>
-                            Pedidos
-                            <span class="sidebar-badge">12</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
-                            <div class="sidebar-menu-icon">👥</div>
-                            Clientes
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
                         <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
-                            <div class="sidebar-menu-icon">📦</div>
-                            Inventario
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <span>Inventario</span>
                         </a>
                     </li>
                     <li class="sidebar-menu-item">
                         <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
-                            <div class="sidebar-menu-icon">🏭</div>
-                            Producción
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Comercial</div>
-                <ul class="sidebar-menu">
-                    <li class="sidebar-menu-item">
-                        <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
-                            <div class="sidebar-menu-icon">📄</div>
-                            Contratos
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
-                            <div class="sidebar-menu-icon">✅</div>
-                            Productos Terminados
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
-                            <div class="sidebar-menu-icon">📅</div>
-                            Agenda
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Análisis</div>
-                <ul class="sidebar-menu">
-                    <li class="sidebar-menu-item">
-                        <a href="reportes.html" class="sidebar-menu-link active">
-                            <div class="sidebar-menu-icon">📈</div>
-                            Reportes
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-divider"></div>
-            
-            <div class="sidebar-section">
-                <ul class="sidebar-menu">
-                    <li class="sidebar-menu-item">
-                        <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
-                            <div class="sidebar-menu-icon">⚙️</div>
-                            Configuración
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        
-        <div class="sidebar-footer">
-            <button class="sidebar-logout" data-logout>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    <polyline points="16,17 21,12 16,7"></polyline>
-                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                </svg>
-                Cerrar Sesión
-            </button>
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <span>Producción</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
+                        <div class="sidebar-menu-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <span>Contratos</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </aside>
-    
-    <main class="main-content">
-        <div class="dashboard-content">
-            <div class="reportes-header">
-                <div>
-                    <h1 class="dashboard-title">Reportes y Análisis</h1>
-                    <p class="dashboard-subtitle">Análisis detallado del rendimiento de tu estudio</p>
+        
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Análisis</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item active">
+                    <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
+                        <div class="sidebar-menu-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </div>
+                        <span>Reportes</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Cuenta</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="perfil.html" class="sidebar-menu-link" data-nav="perfil.html">
+                        <div class="sidebar-menu-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <span>Mi Perfil</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
+                        <div class="sidebar-menu-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                            </svg>
+                        </div>
+                        <span>Configuración</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="login.html" class="sidebar-menu-link" data-nav="login.html">
+                        <div class="sidebar-menu-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                        </div>
+                        <span>Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</aside>
+
+<div class="bubbles-container">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</div>
+
+<main class="main-content">
+    <div class="reports-container">
+        <header class="reports-header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1 class="reports-title">Reportes y Análisis</h1>
+                    <p class="reports-subtitle">Dashboard integral de métricas y rendimiento del negocio</p>
                 </div>
-                
-                <div class="reportes-filters">
-                    <select class="period-filter" id="periodFilter" title="Seleccione un período de tiempo">
-                       <option value="7">Últimos 7 días</option>
-                       <option value="30" selected>Últimos 30 días</option>
-                       <option value="90">Últimos 3 meses</option>
-                       <option value="365">Último año</option>
-                    </select>
-                    
-                    <button class="btn btn-primary" onclick="exportReport()">
+                <div class="header-actions">
+                    <div class="filter-group">
+                        <select id="period-filter" class="period-select">
+                            <option value="today">Hoy</option>
+                            <option value="week">Esta semana</option>
+                            <option value="month" selected>Este mes</option>
+                            <option value="quarter">Este trimestre</option>
+                            <option value="year">Este año</option>
+                        </select>
+                    </div>
+                    <button class="export-btn">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-15"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
-                        Exportar PDF
+                        Exportar
                     </button>
                 </div>
             </div>
-            
-            <div class="reportes-overview">
-                <div class="overview-card glow-effect">
-                    <div class="overview-icon">💰</div>
-                    <div class="overview-content">
-                        <div class="overview-value" id="totalRevenue">S/ 24,650</div>
-                        <div class="overview-label">Ingresos Totales</div>
-                        <div class="overview-change positive">↗ +18.5% vs período anterior</div>
-                    </div>
+        </header>
+
+        <div class="overview-grid">
+            <div class="metric-card revenue">
+                <div class="metric-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
                 </div>
-                
-                <div class="overview-card glow-effect">
-                    <div class="overview-icon">📋</div>
-                    <div class="overview-content">
-                        <div class="overview-value" id="totalOrders">156</div>
-                        <div class="overview-label">Pedidos Completados</div>
-                        <div class="overview-change positive">↗ +12.3% incremento</div>
-                    </div>
-                </div>
-                
-                <div class="overview-card glow-effect">
-                    <div class="overview-icon">👥</div>
-                    <div class="overview-content">
-                        <div class="overview-value" id="newClients">24</div>
-                        <div class="overview-label">Nuevos Clientes</div>
-                        <div class="overview-change positive">↗ +8 este mes</div>
-                    </div>
-                </div>
-                
-                <div class="overview-card glow-effect">
-                    <div class="overview-icon">⭐</div>
-                    <div class="overview-content">
-                        <div class="overview-value" id="avgRating">4.8</div>
-                        <div class="overview-label">Rating Promedio</div>
-                        <div class="overview-change positive">↗ +0.2 mejoría</div>
-                    </div>
+                <div class="metric-content">
+                    <div class="metric-value">$15,000</div>
+                    <div class="metric-label">Ingresos Totales</div>
+                    <div class="metric-change positive">+12.5%</div>
                 </div>
             </div>
-            
-            <div class="reportes-charts">
-                <div class="chart-section glow-effect">
-                    <div class="chart-header">
-                        <h3 class="chart-title">Tendencia de Ingresos</h3>
-                        <p class="chart-subtitle">Ingresos mensuales en los últimos 12 meses</p>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="revenueChart" class="chart-canvas"></canvas>
-                    </div>
+
+            <div class="metric-card orders">
+                <div class="metric-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
                 </div>
-                
-                <div class="chart-section glow-effect">
-                    <div class="chart-header">
-                        <h3 class="chart-title">Distribución de Servicios</h3>
-                        <p class="chart-subtitle">Porcentaje por tipo de servicio</p>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="servicesChart" class="chart-canvas"></canvas>
-                    </div>
+                <div class="metric-content">
+                    <div class="metric-value">210</div>
+                    <div class="metric-label">Pedidos Totales</div>
+                    <div class="metric-change positive">+16.2%</div>
                 </div>
             </div>
-            
-            <div class="reportes-details">
-                <div class="details-section glow-effect">
-                    <div class="section-header">
-                        <h3 class="section-title">Top Clientes</h3>
-                        <p class="section-subtitle">Clientes con mayor volumen de compras</p>
-                    </div>
-                    <div class="top-clients">
-                        <div class="client-item">
-                            <div class="client-rank">1</div>
-                            <div class="client-info">
-                                <div class="client-name">María García</div>
-                                <div class="client-orders">12 pedidos</div>
-                            </div>
-                            <div class="client-amount">S/ 2,850</div>
-                        </div>
-                        <div class="client-item">
-                            <div class="client-rank">2</div>
-                            <div class="client-info">
-                                <div class="client-name">Juan Pérez</div>
-                                <div class="client-orders">8 pedidos</div>
-                            </div>
-                            <div class="client-amount">S/ 1,650</div>
-                        </div>
-                        <div class="client-item">
-                            <div class="client-rank">3</div>
-                            <div class="client-info">
-                                <div class="client-name">Ana López</div>
-                                <div class="client-orders">6 pedidos</div>
-                            </div>
-                            <div class="client-amount">S/ 1,200</div>
-                        </div>
-                        <div class="client-item">
-                            <div class="client-rank">4</div>
-                            <div class="client-info">
-                                <div class="client-name">Carlos Ruiz</div>
-                                <div class="client-orders">5 pedidos</div>
-                            </div>
-                            <div class="client-amount">S/ 980</div>
-                        </div>
-                    </div>
+
+            <div class="metric-card profit">
+                <div class="metric-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
                 </div>
-                
-                <div class="details-section glow-effect">
-                    <div class="section-header">
-                        <h3 class="section-title">Servicios Populares</h3>
-                        <p class="section-subtitle">Servicios más solicitados</p>
-                    </div>
-                    <div class="popular-services">
-                        <div class="service-item">
-                            <div class="service-icon">📷</div>
-                            <div class="service-info">
-                                <div class="service-name">Sesiones Fotográficas</div>
-                                <div class="service-stats">45% del total</div>
-                            </div>
-                            <div class="service-progress">
-                                <div class="progress-bar" style="width: 45%"></div>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-icon">🖼️</div>
-                            <div class="service-info">
-                                <div class="service-name">Enmarcado</div>
-                                <div class="service-stats">25% del total</div>
-                            </div>
-                            <div class="service-progress">
-                                <div class="progress-bar" style="width: 25%"></div>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-icon">🎉</div>
-                            <div class="service-info">
-                                <div class="service-name">Eventos</div>
-                                <div class="service-stats">20% del total</div>
-                            </div>
-                            <div class="service-progress">
-                                <div class="progress-bar" style="width: 20%"></div>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-icon">🖨️</div>
-                            <div class="service-info">
-                                <div class="service-name">Impresión</div>
-                                <div class="service-stats">10% del total</div>
-                            </div>
-                            <div class="service-progress">
-                                <div class="progress-bar" style="width: 10%"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="metric-content">
+                    <div class="metric-value">66.6%</div>
+                    <div class="metric-label">Rentabilidad</div>
+                    <div class="metric-change positive">+3.1%</div>
                 </div>
             </div>
-            
-            <div class="reportes-metrics">
-                <div class="metrics-section glow-effect">
-                    <div class="section-header">
-                        <h3 class="section-title">Métricas de Rendimiento</h3>
-                        <p class="section-subtitle">Indicadores clave de rendimiento</p>
-                    </div>
-                    <div class="metrics-grid">
-                        <div class="metric-item">
-                            <div class="metric-label">Ticket Promedio</div>
-                            <div class="metric-value">S/ 285</div>
-                            <div class="metric-trend positive">+12%</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-label">Tiempo Promedio de Entrega</div>
-                            <div class="metric-value">5.2 días</div>
-                            <div class="metric-trend positive">-0.8d</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-label">Tasa de Retención</div>
-                            <div class="metric-value">78%</div>
-                            <div class="metric-trend positive">+5%</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-label">Proyectos Cancelados</div>
-                            <div class="metric-value">3%</div>
-                            <div class="metric-trend negative">+1%</div>
-                        </div>
-                    </div>
+
+            <div class="metric-card services">
+                <div class="metric-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="8" height="8"></rect>
+                        <rect x="14" y="2" width="8" height="8"></rect>
+                        <rect x="8" y="14" width="8" height="8"></rect>
+                    </svg>
                 </div>
-                
-                <div class="metrics-section glow-effect">
-                    <div class="section-header">
-                        <h3 class="section-title">Análisis Temporal</h3>
-                        <p class="section-subtitle">Distribución por días de la semana</p>
-                    </div>
-                    <div class="temporal-analysis">
-                        <div class="day-analysis">
-                            <div class="day-name">Lunes</div>
-                            <div class="day-bar">
-                                <div class="day-progress" style="width: 60%"></div>
-                            </div>
-                            <div class="day-value">60%</div>
-                        </div>
-                        <div class="day-analysis">
-                            <div class="day-name">Martes</div>
-                            <div class="day-bar">
-                                <div class="day-progress" style="width: 75%"></div>
-                            </div>
-                            <div class="day-value">75%</div>
-                        </div>
-                        <div class="day-analysis">
-                            <div class="day-name">Miércoles</div>
-                            <div class="day-bar">
-                                <div class="day-progress" style="width: 85%"></div>
-                            </div>
-                            <div class="day-value">85%</div>
-                        </div>
-                        <div class="day-analysis">
-                            <div class="day-name">Jueves</div>
-                            <div class="day-bar">
-                                <div class="day-progress" style="width: 90%"></div>
-                            </div>
-                            <div class="day-value">90%</div>
-                        </div>
-                        <div class="day-analysis">
-                            <div class="day-name">Viernes</div>
-                            <div class="day-bar">
-                                <div class="day-progress" style="width: 100%"></div>
-                            </div>
-                            <div class="day-value">100%</div>
-                        </div>
-                        <div class="day-analysis">
-                            <div class="day-name">Sábado</div>
-                            <div class="day-bar">
-                                <div class="day-progress" style="width: 95%"></div>
-                            </div>
-                            <div class="day-value">95%</div>
-                        </div>
-                        <div class="day-analysis">
-                            <div class="day-name">Domingo</div>
-                            <div class="day-bar">
-                                <div class="day-progress" style="width: 40%"></div>
-                            </div>
-                            <div class="day-value">40%</div>
-                        </div>
-                    </div>
+                <div class="metric-content">
+                    <div class="metric-value">45</div>
+                    <div class="metric-label">Servicios Activos</div>
+                    <div class="metric-change negative">-2.3%</div>
                 </div>
             </div>
         </div>
-    </main>
-    
-    <script src="js/global.js"></script>
-    <script src="js/glowing-effect.js"></script>
-    <script src="js/reportes.js"></script>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">Ingresos por Servicio</h3>
+                    <p class="chart-subtitle">Distribución de ingresos por tipo de servicio</p>
+                </div>
+                <div class="chart-content">
+                    <canvas id="servicesChart" class="chart-canvas"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">Ingresos por Cliente</h3>
+                    <p class="chart-subtitle">Top clientes por volumen de ventas</p>
+                </div>
+                <div class="chart-content">
+                    <canvas id="clientsChart" class="chart-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2 class="summary-title">Resumen Financiero</h2>
+            <div class="summary-table">
+                <div class="table-header">
+                    <div class="table-cell">Servicio</div>
+                    <div class="table-cell">Cantidad</div>
+                    <div class="table-cell">Ingresos</div>
+                    <div class="table-cell">% del Total</div>
+                </div>
+                <div class="table-body" id="summaryTable"></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="js/global.js"></script>
+<script src="js/glowing-effect.js"></script>
+<script src="js/bubbles-effect.js"></script>
+<script src="js/components.js"></script>
+<script src="js/reportes.js"></script>
 </body>
 </html>

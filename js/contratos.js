@@ -1,88 +1,78 @@
-// Funcionalidad específica para la página de contratos
-
+// FotoStudio - Contratos JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    initializeContratos();
+    // Inicializar FotoStudio global
+    window.FotoStudio.init();
+    
+    // Funciones específicas de contratos
+    initializeContracts();
 });
 
-function initializeContratos() {
-    // Inicializar filtros
+function initializeContracts() {
+    // Inicializar contratos
     initializeFilters();
     
-    // Inicializar búsqueda
-    initializeSearch();
+    // Configurar eventos
+    setupEventListeners();
     
-    // Inicializar tabla
-    initializeTable();
+    // Cargar datos de contratos
+    loadContractsData();
 }
 
 function initializeFilters() {
+    // Inicializar filtros
     const filters = document.querySelectorAll('.filter-select');
     filters.forEach(filter => {
         filter.addEventListener('change', filterContracts);
     });
 }
 
-function initializeSearch() {
-    const searchInput = document.querySelector('.dashboard-search input');
-    
-    if (searchInput) {
-        searchInput.addEventListener('input', window.FotoStudio.debounce((e) => {
-            const query = e.target.value.toLowerCase();
-            filterContractsBySearch(query);
-        }, 300));
-    }
-}
-
-function initializeTable() {
-    // Agregar funcionalidad a botones de acción
+function setupEventListeners() {
+    // Event listeners para contratos
     const actionButtons = document.querySelectorAll('.action-btn');
     actionButtons.forEach(button => {
-        button.addEventListener('click', handleActionClick);
+        button.addEventListener('click', function() {
+            const action = this.classList.contains('view') ? 'view' :
+                          this.classList.contains('edit') ? 'edit' : 'download';
+            const row = this.closest('tr');
+            const contractId = row.querySelector('.contract-id').textContent;
+            
+            handleContractAction(action, contractId);
+        });
     });
 }
 
 function filterContracts() {
+    // Filtrar contratos según criterios
     const statusFilter = document.querySelector('.filter-select');
+    const typeFilter = document.querySelectorAll('.filter-select')[1];
+    
     const status = statusFilter ? statusFilter.value : '';
+    const type = typeFilter ? typeFilter.value : '';
     
     const rows = document.querySelectorAll('.contratos-table tbody tr');
-    
     rows.forEach(row => {
-        const statusBadge = row.querySelector('.status-badge');
+        const contractStatus = row.querySelector('.status-badge').textContent.toLowerCase();
+        const contractType = row.querySelector('.contract-type').textContent.toLowerCase();
         
-        let showRow = true;
+        let show = true;
         
-        if (status && statusBadge) {
-            const rowStatus = statusBadge.classList.contains(`status-${status}`);
-            if (!rowStatus) showRow = false;
+        // Filtro por estado
+        if (status && !contractStatus.includes(status)) {
+            show = false;
         }
         
-        row.style.display = showRow ? '' : 'none';
+        // Filtro por tipo
+        if (type && !contractType.includes(type)) {
+            show = false;
+        }
+        
+        row.style.display = show ? '' : 'none';
     });
-    
-    updatePaginationInfo();
 }
 
-function filterContractsBySearch(query) {
-    const rows = document.querySelectorAll('.contratos-table tbody tr');
-    
-    rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        const showRow = text.includes(query);
-        row.style.display = showRow ? '' : 'none';
-    });
-    
-    updatePaginationInfo();
-}
-
-function handleActionClick(e) {
-    const button = e.target.closest('.action-btn');
-    const action = button.classList[1]; // view, edit, download
-    
-    const row = button.closest('tr');
-    const contractId = row.querySelector('.contract-id').textContent;
-    
-    switch(action) {
+function handleContractAction(action, contractId) {
+    // Manejar acciones de contrato
+    switch (action) {
         case 'view':
             viewContract(contractId);
             break;
@@ -96,29 +86,41 @@ function handleActionClick(e) {
 }
 
 function viewContract(contractId) {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification(`Viendo contrato ${contractId}`, 'info');
-    }
+    // Ver contrato
+    console.log('Viendo contrato:', contractId);
+    // Implementar lógica de visualización
 }
 
 function editContract(contractId) {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification(`Editando contrato ${contractId}`, 'info');
-    }
+    // Editar contrato
+    console.log('Editando contrato:', contractId);
+    // Implementar lógica de edición
 }
 
 function downloadContract(contractId) {
-    if (window.FotoStudio && window.FotoStudio.showNotification) {
-        window.FotoStudio.showNotification(`Descargando contrato ${contractId}`, 'success');
+    // Descargar contrato
+    console.log('Descargando contrato:', contractId);
+    // Implementar lógica de descarga
+}
+
+function openNewContractModal() {
+    // Abrir modal para nuevo contrato
+    const modal = document.getElementById('newContractModal');
+    if (modal) {
+        modal.style.display = 'flex';
     }
 }
 
-function updatePaginationInfo() {
-    const visibleRows = document.querySelectorAll('.contratos-table tbody tr[style=""], .contratos-table tbody tr:not([style])');
-    const totalRows = document.querySelectorAll('.contratos-table tbody tr').length;
-    
-    const paginationInfo = document.querySelector('.pagination-info');
-    if (paginationInfo) {
-        paginationInfo.textContent = `Mostrando ${visibleRows.length} de ${totalRows} contratos`;
+function closeNewContractModal() {
+    // Cerrar modal para nuevo contrato
+    const modal = document.getElementById('newContractModal');
+    if (modal) {
+        modal.style.display = 'none';
     }
+}
+
+function loadContractsData() {
+    // Cargar datos de contratos
+    console.log('Cargando datos de contratos...');
+    // Implementar carga de datos
 }

@@ -8,22 +8,23 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/produccion.css">
+    <link rel="stylesheet" href="styles/bubbles.css">
 </head>
 <body>
     <div class="sidebar-overlay"></div>
     
-    <button type="button" class="sidebar-toggle">
-        Toggle sidebar
+    <button type="button" class="sidebar-toggle" title="Abrir/Cerrar Menú">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
+        <span class="sr-only">Abrir/Cerrar Menú</span>
     </button>
     
     <aside class="sidebar">
         <div class="sidebar-header">
-            <a href="dashboard.html" class="sidebar-logo">
+            <a href="dashboard.html" class="sidebar-logo" data-nav="dashboard.html">
                 <span class="sidebar-logo-text">FotoStudio</span>
             </a>
         </div>
@@ -44,8 +45,51 @@
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="dashboard.html" class="sidebar-menu-link" data-nav="dashboard.html">
-                            <div class="sidebar-menu-icon">📊</div>
-                            Dashboard
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </div>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                            </div>
+                            <span>Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span>Clientes</span>
                         </a>
                     </li>
                 </ul>
@@ -55,52 +99,39 @@
                 <div class="sidebar-section-title">Gestión</div>
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
-                        <a href="pedidos.html" class="sidebar-menu-link" data-nav="pedidos.html">
-                            <div class="sidebar-menu-icon">📋</div>
-                            Pedidos
-                            <span class="sidebar-badge">12</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="clientes.html" class="sidebar-menu-link" data-nav="clientes.html">
-                            <div class="sidebar-menu-icon">👥</div>
-                            Clientes
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
                         <a href="inventario.html" class="sidebar-menu-link" data-nav="inventario.html">
-                            <div class="sidebar-menu-icon">📦</div>
-                            Inventario
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <span>Inventario</span>
                         </a>
                     </li>
-                    <li class="sidebar-menu-item">
-                        <a href="produccion.html" class="sidebar-menu-link active">
-                            <div class="sidebar-menu-icon">🏭</div>
-                            Producción
+                    <li class="sidebar-menu-item active">
+                        <a href="produccion.html" class="sidebar-menu-link" data-nav="produccion.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <span>Producción</span>
                         </a>
                     </li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Comercial</div>
-                <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="contratos.html" class="sidebar-menu-link" data-nav="contratos.html">
-                            <div class="sidebar-menu-icon">📄</div>
-                            Contratos
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="productos-terminados.html" class="sidebar-menu-link" data-nav="productos-terminados.html">
-                            <div class="sidebar-menu-icon">✅</div>
-                            Productos Terminados
-                        </a>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="agenda.html" class="sidebar-menu-link" data-nav="agenda.html">
-                            <div class="sidebar-menu-icon">📅</div>
-                            Agenda
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <span>Contratos</span>
                         </a>
                     </li>
                 </ul>
@@ -111,273 +142,451 @@
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
                         <a href="reportes.html" class="sidebar-menu-link" data-nav="reportes.html">
-                            <div class="sidebar-menu-icon">📈</div>
-                            Reportes
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <span>Reportes</span>
                         </a>
                     </li>
                 </ul>
             </div>
             
-            <div class="sidebar-divider"></div>
-            
             <div class="sidebar-section">
+                <div class="sidebar-section-title">Cuenta</div>
                 <ul class="sidebar-menu">
                     <li class="sidebar-menu-item">
+                        <a href="perfil.html" class="sidebar-menu-link" data-nav="perfil.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span>Mi Perfil</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
                         <a href="configuracion.html" class="sidebar-menu-link" data-nav="configuracion.html">
-                            <div class="sidebar-menu-icon">⚙️</div>
-                            Configuración
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                </svg>
+                            </div>
+                            <span>Configuración</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="login.html" class="sidebar-menu-link" data-nav="login.html">
+                            <div class="sidebar-menu-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                            </div>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </nav>
-        
-        <div class="sidebar-footer">
-            <button class="sidebar-logout" data-logout>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    <polyline points="16,17 21,12 16,7"></polyline>
-                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                </svg>
-                Cerrar Sesión
-            </button>
-        </div>
     </aside>
     
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
     <main class="main-content">
-        <header class="dashboard-header">
-            <div>
-                <h1 class="dashboard-title">Centro de Producción</h1>
-                <p class="dashboard-subtitle">Gestiona el flujo de trabajo y producción</p>
+        <div class="produccion-container">
+            <div class="produccion-header">
+                <h1 class="produccion-title">Producción</h1>
+                <div class="produccion-actions">
+                    <div class="search-container">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" placeholder="Buscar pedidos en producción..." class="search-input">
+                    </div>
+                    <button class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Nuevo Pedido
+                    </button>
+                </div>
             </div>
             
-            <div class="dashboard-actions">
-                <div class="dashboard-search">
-                    <svg class="dashboard-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="M21 21l-4.35-4.35"></path>
+            <div class="produccion-filters">
+                <div class="filter-group">
+                    <label>Estado:</label>
+                    <select class="form-select">
+                        <option value="">Todos</option>
+                        <option value="pendiente">Pendiente</option>
+                        <option value="en_proceso">En Proceso</option>
+                        <option value="retoque">Retoque</option>
+                        <option value="impresion">Impresión</option>
+                        <option value="finalizado">Finalizado</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Prioridad:</label>
+                    <select class="form-select">
+                        <option value="">Todas</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Media</option>
+                        <option value="baja">Baja</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Fecha:</label>
+                    <input type="date" class="form-select">
+                </div>
+                <button class="btn btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="21" y1="4" x2="14" y2="4"></line>
+                        <line x1="10" y1="4" x2="3" y2="4"></line>
+                        <line x1="21" y1="12" x2="12" y2="12"></line>
+                        <line x1="8" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="20" x2="16" y2="20"></line>
+                        <line x1="12" y1="20" x2="3" y2="20"></line>
+                        <line x1="14" y1="2" x2="14" y2="6"></line>
+                        <line x1="8" y1="10" x2="8" y2="14"></line>
+                        <line x1="16" y1="18" x2="16" y2="22"></line>
                     </svg>
-                    <input type="text" placeholder="Buscar trabajos...">
-                </div>
-                
-                <div class="dashboard-user">
-                    <div class="avatar avatar-md">
-                        <img data-user-avatar src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237033ff'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="Avatar">
-                    </div>
-                    <span data-user-name>Usuario</span>
-                </div>
+                    Filtros
+                </button>
             </div>
-        </header>
-        
-        <div class="dashboard-content">
-            <div class="production-stats">
-                <div class="stat-card glow-effect">
-                    <div class="stat-icon">📋</div>
+            
+            <div class="produccion-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
                     <div class="stat-content">
-                        <div class="stat-value">24</div>
-                        <div class="stat-label">Trabajos Activos</div>
-                        <div class="stat-trend up">+3 esta semana</div>
+                        <div class="stat-value">32</div>
+                        <div class="stat-label">Total en Producción</div>
                     </div>
                 </div>
-                
-                <div class="stat-card glow-effect">
-                    <div class="stat-icon">⏱️</div>
+                <div class="stat-card warning">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
                     <div class="stat-content">
-                        <div class="stat-value">2.5</div>
-                        <div class="stat-label">Días Promedio</div>
-                        <div class="stat-trend down">-0.5 días</div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Pendientes</div>
                     </div>
                 </div>
-                
-                <div class="stat-card glow-effect">
-                    <div class="stat-icon">✅</div>
-                    <div class="stat-content">
-                        <div class="stat-value">89%</div>
-                        <div class="stat-label">Eficiencia</div>
-                        <div class="stat-trend up">+5% este mes</div>
+                <div class="stat-card info">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
                     </div>
-                </div>
-                
-                <div class="stat-card glow-effect">
-                    <div class="stat-icon">🎯</div>
                     <div class="stat-content">
                         <div class="stat-value">15</div>
+                        <div class="stat-label">En Retoque</div>
+                    </div>
+                </div>
+                <div class="stat-card success">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">9</div>
                         <div class="stat-label">Completados Hoy</div>
-                        <div class="stat-trend up">+2 vs ayer</div>
                     </div>
                 </div>
             </div>
             
-            <div class="production-grid">
-                <div class="workflow-board">
-                    <div class="workflow-header">
-                        <h3>Flujo de Trabajo</h3>
-                        <div class="workflow-filters">
-                            <select class="filter-select">
-                                <option value="">Todos los trabajos</option>
-                                <option value="fotografia">Fotografía</option>
-                                <option value="enmarcado">Enmarcado</option>
-                                <option value="impresion">Impresión</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="workflow-columns">
-                        <div class="workflow-column">
-                            <div class="column-header">
-                                <h4>📋 Pendientes</h4>
-                                <span class="column-count">8</span>
-                            </div>
-                            <div class="workflow-items">
-                                <div class="workflow-item">
-                                    <div class="item-header">
-                                        <span class="item-id">#PROD-001</span>
-                                        <span class="item-priority high">Alta</span>
-                                    </div>
-                                    <div class="item-content">
-                                        <h5>Sesión Fotográfica Familiar</h5>
-                                        <p>Cliente: María García</p>
-                                        <div class="item-meta">
-                                            <span class="item-date">📅 20 Dic 2024</span>
-                                            <span class="item-time">⏱️ 2 horas</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-actions">
-                                        <button class="btn btn-sm btn-primary">Iniciar</button>
-                                        <button class="btn btn-sm btn-secondary">Ver</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="workflow-item">
-                                    <div class="item-header">
-                                        <span class="item-id">#PROD-002</span>
-                                        <span class="item-priority medium">Media</span>
-                                    </div>
-                                    <div class="item-content">
-                                        <h5>Enmarcado 30x40</h5>
-                                        <p>Cliente: Juan Pérez</p>
-                                        <div class="item-meta">
-                                            <span class="item-date">📅 22 Dic 2024</span>
-                                            <span class="item-time">⏱️ 1 hora</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-actions">
-                                        <button class="btn btn-sm btn-primary">Iniciar</button>
-                                        <button class="btn btn-sm btn-secondary">Ver</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="workflow-column">
-                            <div class="column-header">
-                                <h4>🔄 En Proceso</h4>
-                                <span class="column-count">5</span>
-                            </div>
-                            <div class="workflow-items">
-                                <div class="workflow-item">
-                                    <div class="item-header">
-                                        <span class="item-id">#PROD-003</span>
-                                        <span class="item-priority high">Alta</span>
-                                    </div>
-                                    <div class="item-content">
-                                        <h5>Edición de Fotos</h5>
-                                        <p>Cliente: Ana López</p>
-                                        <div class="item-meta">
-                                            <span class="item-date">📅 18 Dic 2024</span>
-                                            <span class="item-time">⏱️ 3 horas</span>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="progress-fill" style="width: 65%;"></div>
-                                        </div>
-                                    </div>
-                                    <div class="item-actions">
-                                        <button class="btn btn-sm btn-success">Completar</button>
-                                        <button class="btn btn-sm btn-secondary">Ver</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="workflow-column">
-                            <div class="column-header">
-                                <h4>✅ Completados</h4>
-                                <span class="column-count">11</span>
-                            </div>
-                            <div class="workflow-items">
-                                <div class="workflow-item completed">
-                                    <div class="item-header">
-                                        <span class="item-id">#PROD-004</span>
-                                        <span class="item-status completed">✅</span>
-                                    </div>
-                                    <div class="item-content">
-                                        <h5>Impresión de Fotos</h5>
-                                        <p>Cliente: Carlos Ruiz</p>
-                                        <div class="item-meta">
-                                            <span class="item-date">📅 15 Dic 2024</span>
-                                            <span class="item-time">⏱️ 30 min</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-actions">
-                                        <button class="btn btn-sm btn-secondary">Ver</button>
-                                        <button class="btn btn-sm btn-outline">Entregar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Servicio</th>
+                            <th>Fecha Entrega</th>
+                            <th>Estado</th>
+                            <th>Prioridad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PRO-001</td>
+                            <td>María González</td>
+                            <td>Sesión Familiar</td>
+                            <td>15/06/2023</td>
+                            <td><span class="badge warning">Retoque</span></td>
+                            <td><span class="badge danger">Alta</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Enmarcar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <rect x="7" y="7" width="10" height="10" rx="2" ry="2"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Imprimir">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                        <rect x="6" y="14" width="12" height="8"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PRO-002</td>
+                            <td>Carlos Rodríguez</td>
+                            <td>Fotografía Producto</td>
+                            <td>22/06/2023</td>
+                            <td><span class="badge info">Impresión</span></td>
+                            <td><span class="badge warning">Media</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Enmarcar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <rect x="7" y="7" width="10" height="10" rx="2" ry="2"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Imprimir">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                        <rect x="6" y="14" width="12" height="8"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PRO-003</td>
+                            <td>Empresa XYZ</td>
+                            <td>Catálogo Comercial</td>
+                            <td>05/07/2023</td>
+                            <td><span class="badge primary">En Proceso</span></td>
+                            <td><span class="badge success">Baja</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Enmarcar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <rect x="7" y="7" width="10" height="10" rx="2" ry="2"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Imprimir">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                        <rect x="6" y="14" width="12" height="8"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PRO-004</td>
+                            <td>Ana Martínez</td>
+                            <td>Retrato Profesional</td>
+                            <td>10/07/2023</td>
+                            <td><span class="badge success">Finalizado</span></td>
+                            <td><span class="badge danger">Alta</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Enmarcar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <rect x="7" y="7" width="10" height="10" rx="2" ry="2"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Imprimir">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                        <rect x="6" y="14" width="12" height="8"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PRO-005</td>
+                            <td>Pedro Sánchez</td>
+                            <td>Álbum Graduación</td>
+                            <td>18/07/2023</td>
+                            <td><span class="badge warning">Retoque</span></td>
+                            <td><span class="badge warning">Media</span></td>
+                            <td class="table-actions">
+                                <button class="btn btn-icon" title="Ver">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Enmarcar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <rect x="7" y="7" width="10" height="10" rx="2" ry="2"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Imprimir">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                        <rect x="6" y="14" width="12" height="8"></rect>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-icon" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">
+                <button class="btn btn-icon" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="pagination-pages">
+                    <button class="pagination-page active">1</button>
+                    <button class="pagination-page">2</button>
+                    <button class="pagination-page">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-page">5</button>
                 </div>
-                
-                <div class="production-sidebar">
-                    <div class="quick-actions">
-                        <h3>Acciones Rápidas</h3>
-                        <div class="action-buttons">
-                            <button class="action-btn primary">
-                                <span class="action-icon">📷</span>
-                                <span>Nueva Sesión</span>
-                            </button>
-                            <button class="action-btn secondary">
-                                <span class="action-icon">🖼️</span>
-                                <span>Enmarcar</span>
-                            </button>
-                            <button class="action-btn secondary">
-                                <span class="action-icon">🖨️</span>
-                                <span>Imprimir</span>
-                            </button>
-                            <button class="action-btn secondary">
-                                <span class="action-icon">✏️</span>
-                                <span>Editar</span>
-                            </button>
+                <button class="btn btn-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="recent-activity">
+                <h2 class="section-title">Actividad Reciente</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20h9"></path>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Retoque completado</div>
+                            <div class="activity-description">Ana Martínez - Retrato Profesional</div>
+                            <div class="activity-time">Hace 2 horas</div>
                         </div>
                     </div>
-                    
-                    <div class="recent-activity">
-                        <h3>Actividad Reciente</h3>
-                        <div class="activity-list">
-                            <div class="activity-item">
-                                <div class="activity-icon">✅</div>
-                                <div class="activity-content">
-                                    <div class="activity-title">Trabajo completado</div>
-                                    <div class="activity-description">#PROD-004 - Impresión de Fotos</div>
-                                </div>
-                                <div class="activity-time">Hace 2 horas</div>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon">🔄</div>
-                                <div class="activity-content">
-                                    <div class="activity-title">Trabajo iniciado</div>
-                                    <div class="activity-description">#PROD-003 - Edición de Fotos</div>
-                                </div>
-                                <div class="activity-time">Hace 4 horas</div>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon">📋</div>
-                                <div class="activity-content">
-                                    <div class="activity-title">Nuevo trabajo</div>
-                                    <div class="activity-description">#PROD-001 - Sesión Fotográfica</div>
-                                </div>
-                                <div class="activity-time">Hace 6 horas</div>
-                            </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                <rect x="6" y="14" width="12" height="8"></rect>
+                            </svg>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Impresión iniciada</div>
+                            <div class="activity-description">Carlos Rodríguez - Fotografía Producto</div>
+                            <div class="activity-time">Hace 3 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <rect x="7" y="7" width="10" height="10" rx="2" ry="2"></rect>
+                            </svg>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Enmarcado completado</div>
+                            <div class="activity-description">Pedro Sánchez - Álbum Graduación</div>
+                            <div class="activity-time">Hace 5 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Pedido finalizado</div>
+                            <div class="activity-description">María González - Sesión Familiar</div>
+                            <div class="activity-time">Hace 1 día</div>
                         </div>
                     </div>
                 </div>
@@ -386,6 +595,8 @@
     </main>
     
     <script src="js/global.js"></script>
+    <script src="js/glowing-effect.js"></script>
+    <script src="js/bubbles-effect.js"></script>
     <script src="js/components.js"></script>
     <script src="js/produccion.js"></script>
 </body>

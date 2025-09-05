@@ -1,4 +1,7 @@
-// Componentes y utilidades globales para FotoStudio
+/**
+ * Componentes y utilidades globales para FotoStudio
+ * Sistema mejorado con efectos visuales y animaciones
+ */
 
 // Inicialización de componentes comunes
 document.addEventListener('DOMContentLoaded', function() {
@@ -6,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeModals();
     initializeTooltips();
     initializeSidebar();
+    initializeCardEffects();
 });
 
 function initializeComponents() {
@@ -79,8 +83,26 @@ function initializeAnimations() {
         });
     }, { threshold: 0.1 });
     
-    document.querySelectorAll('.stat-card, .metric-card, .chart-card').forEach(card => {
+    document.querySelectorAll('.stat-card, .metric-card, .chart-card, .widget-card').forEach(card => {
         observer.observe(card);
+    });
+}
+
+function initializeCardEffects() {
+    // Añadir efectos de hover a tarjetas
+    const cards = document.querySelectorAll('.card, .widget-card, .stat-card, .metric-card, .chart-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+            this.style.transition = 'all 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
+        });
     });
 }
 

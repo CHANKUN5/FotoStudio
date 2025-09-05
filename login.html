@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/bubbles.css">
 </head>
 <body>
     <div class="login-container">
@@ -55,6 +57,38 @@
     
     <script src="js/global.js"></script>
     <script src="js/glowing-effect.js"></script>
+    <script src="js/bubbles-effect.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostrar el logo de la empresa
+            const logoContainer = document.querySelector('.login-logo-container');
+            const logoImg = document.querySelector('.login-logo');
+            
+            if (logoContainer && logoImg) {
+                logoContainer.style.display = 'flex';
+                logoImg.style.opacity = '1';
+                logoImg.style.transform = 'scale(1)';
+            }
+            
+            // Inicializar efecto de burbujas
+            const bubbles = document.querySelectorAll('.bubble');
+            bubbles.forEach(bubble => {
+                const size = Math.random() * 100 + 50;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${posX}%`;
+                bubble.style.top = `${posY}%`;
+                bubble.style.animationDelay = `${delay}s`;
+                bubble.style.animationDuration = `${duration}s`;
+            });
+        });
+    </script>
+    <script src="js/components.js"></script>
     <script src="js/login.js"></script>
 </body>
 </html>
